@@ -4,33 +4,59 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.schoolerp.databinding.FragmentHomeBinding;
+import com.example.schoolerp.ProfileFragment;
+import com.example.schoolerp.R;
+import com.example.schoolerp.TrackFragment;
 
 public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        // Find the CardView with ID "name"
+        CardView nameCardView = root.findViewById(R.id.name);
 
+        // Set OnClickListener for the "name" CardView
+        nameCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openProfileFragment();
+            }
+        });
+
+        // Find the CardView with ID "transport"
+        CardView transportCardView = root.findViewById(R.id.transport);
+
+        // Set OnClickListener for the "transport" CardView
+        transportCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTransportFragment();
+            }
+        });
 
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    private void openProfileFragment() {
+        // Replace the current fragment with FragmentProfile
+        getParentFragmentManager().beginTransaction()
+                .replace(((ViewGroup)getView().getParent()).getId(), new ProfileFragment())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void openTransportFragment() {
+        // Replace the current fragment with FragmentTransport
+        getParentFragmentManager().beginTransaction()
+                .replace(((ViewGroup)getView().getParent()).getId(), new TrackFragment())
+                .addToBackStack(null)
+                .commit();
     }
 }

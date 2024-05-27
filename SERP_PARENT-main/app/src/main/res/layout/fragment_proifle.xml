@@ -65,9 +65,9 @@
                     android:paddingBottom="8dp">
 
                     <ImageView
-                        android:layout_width="180dp"
+                        android:layout_width="193dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/profilde"/>
+                        android:src="@drawable/profilde" />
 
                     <EditText
                         android:id="@+id/name"
