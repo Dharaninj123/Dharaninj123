@@ -163,5 +163,14 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="student_id">Student ID</string>
+    <string name="dobcertificate">DOB</string>
+    <string name="aadhaar">Aadhaar</string>
+    <string name="caste_certificate">Caste Certificate</string>
+    <string name="bus_tracking">Bus Tracking</string>
+    <string name="student_tracking">Student Tracking</string>
+    <string name="sports_and_cultural">Sports and Cultural</string>
+    <string name="student_profile">Student Profile</string>
+    <string name="view">View</string>
 
 </resources>

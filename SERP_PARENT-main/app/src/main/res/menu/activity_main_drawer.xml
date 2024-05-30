@@ -10,25 +10,28 @@
             android:title="@string/menu_home"/>
 
         <item
-            android:id="@+id/nav_attendance"
-            android:title="@string/attendance"/>
+            android:id="@+id/nav_studentId"
+            android:icon="@drawable/baseline_person_24"
+            android:title="Student ID - 24RJ19"/>
+
+
+       <item
+           android:id="@+id/nav_dobCertificate"
+           android:icon="@drawable/baseline_date_range_24"
+           android:title="@string/dobcertificate"/>
+
+
+       <item
+           android:id="@+id/nav_aadhaar"
+           android:icon="@drawable/baseline_bookmarks_24"
+           android:title="@string/aadhaar"/>
 
         <item
-            android:id="@+id/nav_notification"
-            android:icon="@drawable/baseline_doorbell_24"
-            android:title="@string/notification"/>
-
-        <item
-            android:id="@+id/nav_transport"
-            android:icon="@drawable/baseline_directions_bus_24"
-            android:title="@string/transport"/>
+            android:id="@+id/nav_casteCertificate"
+            android:icon="@drawable/result"
+            android:title="@string/caste_certificate"/>
 
 
-
-        <item
-            android:id="@+id/nav_contact"
-            android:icon="@drawable/baseline_contact_page_24"
-            android:title="@string/contact"/>
 
     </group>
 

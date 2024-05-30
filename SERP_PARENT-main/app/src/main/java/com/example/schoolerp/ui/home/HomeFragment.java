@@ -8,10 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
-import com.example.schoolerp.ProfileFragment;
 import com.example.schoolerp.R;
-import com.example.schoolerp.TrackFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -26,7 +25,7 @@ public class HomeFragment extends Fragment {
         nameCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openProfileFragment();
+                openProfileFragment(v);
             }
         });
 
@@ -37,26 +36,58 @@ public class HomeFragment extends Fragment {
         transportCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openTransportFragment();
+                openTransportFragment(v);
             }
         });
+
+        CardView StudenttrackCardView = root.findViewById(R.id.attendance);
+
+        StudenttrackCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openAttendanceFragment(v); }
+
+        });
+
+        CardView ReportCardView = root.findViewById(R.id.report);
+
+        ReportCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openReportFragment(v); }
+
+        });
+
+        CardView SportsandCulturalCardView = root.findViewById(R.id.sportsandcultural);
+
+        SportsandCulturalCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openSportCulturalFragment(v); }
+
+        });
+
 
         return root;
     }
 
-    private void openProfileFragment() {
+    private void openProfileFragment(View view) {
         // Replace the current fragment with FragmentProfile
-        getParentFragmentManager().beginTransaction()
-                .replace(((ViewGroup)getView().getParent()).getId(), new ProfileFragment())
-                .addToBackStack(null)
-                .commit();
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_profileFragment);
+
     }
 
-    private void openTransportFragment() {
-        // Replace the current fragment with FragmentTransport
-        getParentFragmentManager().beginTransaction()
-                .replace(((ViewGroup)getView().getParent()).getId(), new TrackFragment())
-                .addToBackStack(null)
-                .commit();
+    private void openTransportFragment(View view) {
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_transport);
     }
+
+    private void openAttendanceFragment(View view){
+        Navigation.findNavController(view).navigate((R.id.action_nav_home_to_attendance));
+    }
+
+    private void openReportFragment(View view){
+        Navigation.findNavController(view).navigate((R.id.action_nav_home_to_result));
+    }
+
+    private void openSportCulturalFragment(View view){
+        Navigation.findNavController(view).navigate((R.id.action_nav_home_to_sportsandcultural));
+    }
+
 }

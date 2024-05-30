@@ -7,14 +7,14 @@ package com.example.schoolerp;
         import android.view.View;
         import android.view.ViewGroup;
 
-public class ProfileFragment extends Fragment {
+public class Student_Profile extends Fragment {
 
-    public ProfileFragment() {
+    public Student_Profile() {
         // Required empty public constructor
     }
 
-    public static ProfileFragment newInstance() {
-        return new ProfileFragment();
+    public static Student_Profile newInstance() {
+        return new Student_Profile();
     }
 
     @Override
@@ -26,6 +26,6 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_proifle, container, false);
+        return inflater.inflate(R.layout.profile_student, container, false);
     }
 }

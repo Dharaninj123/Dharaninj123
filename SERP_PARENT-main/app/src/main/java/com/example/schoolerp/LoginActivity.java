@@ -24,38 +24,38 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-        private EditText login_mobile_number, login_password;
-        private Button loginButton, forgotPasswordButton, signup;
-        private ApiService apiService;
+    private EditText login_mobile_number, login_password;
+    private Button loginButton, forgotPasswordButton, signup;
+    private ApiService apiService;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.activity_login);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-                login_mobile_number = findViewById(R.id.login_mobile_number);
-                login_password = findViewById(R.id.login_password);
-                loginButton = findViewById(R.id.Login_button);
-                forgotPasswordButton = findViewById(R.id.forgotpassword);
-                signup = findViewById(R.id.signup);
+        login_mobile_number = findViewById(R.id.login_mobile_number);
+        login_password = findViewById(R.id.login_password);
+        loginButton = findViewById(R.id.Login_button);
+        forgotPasswordButton = findViewById(R.id.forgotpassword);
+        signup = findViewById(R.id.signup);
 
-                Controller crobj = Controller.getInstance();
-                // Initialize Retrofit service
-                apiService = crobj.getApiService();
+       /* Controller crobj = Controller.getInstance();
+        // Initialize Retrofit service
+        apiService = crobj.getApiService();
 
-                // Retrieve FCM token and store it in SharedPreferences
-                FirebaseMessaging.getInstance().getToken()
-                        .addOnCompleteListener(task -> {
-                                if (task.isSuccessful() && task.getResult() != null) {
-                                        String token = task.getResult();
-                                        // Store token in SharedPreferences
-                                        storeTokenLocally(token);
-                                } else {
-                                        Log.e("LoginActivity", "Failed to retrieve FCM token");
-                                        // Handle token retrieval failure
-                                        Toast.makeText(LoginActivity.this, "Failed to retrieve FCM token", Toast.LENGTH_SHORT).show();
-                                }
-                        });
+        // Retrieve FCM token and store it in SharedPreferences
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && task.getResult() != null) {
+                        String token = task.getResult();
+                        // Store token in SharedPreferences
+                        storeTokenLocally(token);
+                    } else {
+                        Log.e("LoginActivity", "Failed to retrieve FCM token");
+                        // Handle token retrieval failure
+                        Toast.makeText(LoginActivity.this, "Failed to retrieve FCM token", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 loginButton.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -84,10 +84,11 @@ public class LoginActivity extends AppCompatActivity {
                                 startActivity(intent);
                         }
                 });
+
                 signup.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                                Intent intent = new Intent(LoginActivity.this, SendOTPActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, Home_erp.class);
                                 startActivity(intent);
                         }
                 });
@@ -221,5 +222,30 @@ public class LoginActivity extends AppCompatActivity {
                 // For example, if you have a TextView in the navigation bar:
                 TextView navBarTextView = findViewById(R.id.nameView);
                 navBarTextView.setText(studentName);
-        }
+        }*/
+        forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SendOTPActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, Home_erp.class);
+                startActivity(intent);
+            }
+        });
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, Home_erp.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
 }

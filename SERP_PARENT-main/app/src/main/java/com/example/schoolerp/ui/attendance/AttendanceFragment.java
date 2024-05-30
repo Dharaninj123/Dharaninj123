@@ -24,8 +24,7 @@ public class AttendanceFragment extends Fragment {
         binding = FragmentAttendanceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textAttendance;
-        attendanceViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
 
         return root;
     }

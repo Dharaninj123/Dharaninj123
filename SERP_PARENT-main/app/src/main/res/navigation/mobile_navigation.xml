@@ -9,7 +9,32 @@
         android:id="@+id/nav_home"
         android:label="@string/menu_home"
         android:name="com.example.schoolerp.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+
+    <action
+        android:id="@+id/action_nav_home_to_profileFragment"
+        app:destination="@+id/studentProfile"/>
+    <action
+        android:id="@+id/action_nav_home_to_contact"
+        app:destination="@+id/nav_attendance"/>
+    <action
+        android:id="@+id/action_nav_home_to_transport"
+        app:destination="@+id/nav_transport"/>
+
+        <action
+            android:id="@+id/action_nav_home_to_attendance"
+            app:destination="@+id/nav_attendance"/>
+
+        <action
+            android:id="@+id/action_nav_home_to_result"
+            app:destination="@+id/nav_result"/>
+
+        <action
+            android:id="@+id/action_nav_home_to_sportsandcultural"
+            app:destination="@+id/nav_sportsandcultural"/>
+
+    </fragment>
+
 
     <fragment
         android:id="@+id/nav_transport"
@@ -19,7 +44,7 @@
 
     <fragment
         android:id="@+id/nav_attendance"
-        android:label="@string/attendance"
+        android:label="Student Tracking"
         android:name="com.example.schoolerp.ui.attendance.AttendanceFragment"
         tools:layout="@layout/fragment_attendance" />
 
@@ -29,6 +54,13 @@
         android:label="@string/contact"
         android:name="com.example.schoolerp.ContactFragment"
         tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/nav_result"
+        android:name="com.example.schoolerp.ResultFragment"
+        android:label="Academin Report"
+        tools:layout="@layout/fragment_result" />
+
 
     <fragment
         android:id="@+id/nav_about"
@@ -49,6 +81,38 @@
         android:label="@string/notification"
         tools:layout="@layout/fragment_notification" />
 
+
+
+    <fragment
+        android:id="@+id/studentProfile"
+        android:name="com.example.schoolerp.Student_Profile"
+        android:label="@string/student_profile"
+        tools:layout="@layout/profile_student"/>
+    <fragment
+        android:id="@+id/nav_sportsandcultural"
+        android:name="com.example.schoolerp.SportCulturalFragment"
+        android:label="Sports and Cultural"
+        tools:layout="@layout/fragment_sport_cultural" />
+
+
+    <fragment
+        android:id="@+id/nav_studentId"
+        android:label="Student Id-19RJ01" />
+    <fragment
+        android:id="@+id/nav_dobCertificate"
+        android:name="com.example.schoolerp.dob"
+        android:label="Student DOB"
+        tools:layout="@layout/fragment_dob" />
+    <fragment
+        android:id="@+id/nav_aadhaar"
+        android:name="com.example.schoolerp.AadhaarFragment"
+        android:label="Student Aadhaar"
+        tools:layout="@layout/fragment_aadhaar" />
+    <fragment
+        android:id="@+id/nav_casteCertificate"
+        android:name="com.example.schoolerp.CasteCertificate"
+        android:label="Student Caste-Certificate"
+        tools:layout="@layout/fragment_caste_certificate" />
 
 
 </navigation>
