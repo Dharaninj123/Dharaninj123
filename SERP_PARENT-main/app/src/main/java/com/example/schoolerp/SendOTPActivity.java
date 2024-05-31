@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,9 +43,30 @@ public class SendOTPActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (validateMobileNumber()) {
-                    // Proceed to get OTP if mobile number is valid
-                    String mobileNumber = inputMobile.getText().toString().trim();
-                    sendOTP(mobileNumber);
+                    // Start the blink animation
+                    Animation blinkAnimation = AnimationUtils.loadAnimation(SendOTPActivity.this, R.anim.blink);
+                    view.startAnimation(blinkAnimation);
+
+                    // Proceed to get OTP after the animation ends
+                    blinkAnimation.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+                            // Optional: actions to perform when the animation starts
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            String mobileNumber = inputMobile.getText().toString().trim();
+                            sendOTP(mobileNumber);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+                            // Optional: actions to perform when the animation repeats
+                        }
+                    });
+                } else {
+                    Toast.makeText(SendOTPActivity.this, "Invalid Mobile Number.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

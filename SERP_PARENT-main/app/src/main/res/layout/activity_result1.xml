@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="vertical"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".result1">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:background="@color/yellow"
             android:paddingVertical="8dp"
             android:paddingHorizontal="10dp"
-            android:text="@string/today_s_activity"
+            android:text="@string/view_result"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -31,27 +31,59 @@
             android:orientation="horizontal"
             android:paddingTop="8dp"
             android:paddingHorizontal="10dp"
+            android:paddingBottom="8dp"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/test241"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test1"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button241"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="10dp"
             android:paddingBottom="8dp">
 
             <TextView
-                android:id="@+id/journey"
+                android:id="@+id/test242"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Journey"
+                android:text="Test2"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/status"
+            <Button
+                android:id="@+id/button242"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Status"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
                 android:textStyle="bold" />
+
 
 
         </LinearLayout>
@@ -65,313 +97,247 @@
             android:paddingBottom="8dp">
 
             <TextView
-                android:id="@+id/pick"
+                android:id="@+id/test243"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Pickup Journey"
+                android:text="Test3"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/pickup"
+            <Button
+                android:id="@+id/button243"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="pickup"
-                android:textColor="@color/black" />
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="8dp">
 
             <TextView
-                android:id="@+id/stp"
+                android:id="@+id/test244"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Drop Journey"
+                android:text="Test4"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/stop"
+            <Button
+                android:id="@+id/button244"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="drop"
-                android:textColor="@color/black" />
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/pickjourney"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow"
-            android:paddingVertical="8dp"
-            android:text="Pick Journey"
-            android:paddingHorizontal="10dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:paddingHorizontal="10dp"
+        android:paddingBottom="8dp">
 
         <TextView
-            android:id="@+id/jorney1"
-            android:layout_width="match_parent"
+            android:id="@+id/midterm24"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Journey"
-            android:paddingHorizontal="10dp"
+            android:layout_weight="1"
+            android:text="Mid-Term"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/button24"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/stop1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Stop"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/place"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="place"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/bus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Bus"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/busNo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="BusNo"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/start"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Starts At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/end"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ends At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/dropjourney"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="10dp"
-            android:text="Drop Journey"
-            android:textColor="@color/black"
-            android:textSize="20sp"
+            android:layout_weight="1"
+            android:text="View"
+            android:textColor="@color/white"
+            android:background="@color/grey"
+            android:textSize="10sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/jorney2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Journey"
-            android:paddingHorizontal="10dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/stop2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Stop"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/place2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="place"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/bus2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Bus"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/busNo."
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="BusNo"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/start2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Starts At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/end2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ends At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
 
     </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="8dp">
 
+            <TextView
+                android:id="@+id/test245"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test5"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button245"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/test246"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test6"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button246"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/test247"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test7"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button247"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/test248"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Test8"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button248"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="8dp"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:id="@+id/exam24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Final-Exam"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttone24"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="View"
+                android:textColor="@color/white"
+                android:background="@color/grey"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+
+
+</LinearLayout>
 </ScrollView>

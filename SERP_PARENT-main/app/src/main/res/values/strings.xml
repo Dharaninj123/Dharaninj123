@@ -172,5 +172,13 @@
     <string name="sports_and_cultural">Sports and Cultural</string>
     <string name="student_profile">Student Profile</string>
     <string name="view">View</string>
+    <string name="student_academic_report">Student: Academic Report</string>
+    <string name="select_the_year">Select the year</string>
+    <string name="_2024">2024</string>
+    <string name="_2023">2023</string>
+    <string name="_2022">2022</string>
+    <string name="_2021">2021</string>
+    <string name="today_s_activity">Today\'s Activity</string>
+    <string name="view_result">View Result</string>
 
 </resources>

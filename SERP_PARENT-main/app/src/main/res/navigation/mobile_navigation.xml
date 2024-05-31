@@ -59,7 +59,15 @@
         android:id="@+id/nav_result"
         android:name="com.example.schoolerp.ResultFragment"
         android:label="Academin Report"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result" >
+
+        <action
+            android:id="@+id/action_nav_report_to_result1"
+            app:destination="@+id/result1"/>
+
+
+
+    </fragment>
 
 
     <fragment
@@ -95,9 +103,6 @@
         tools:layout="@layout/fragment_sport_cultural" />
 
 
-    <fragment
-        android:id="@+id/nav_studentId"
-        android:label="Student Id-19RJ01" />
     <fragment
         android:id="@+id/nav_dobCertificate"
         android:name="com.example.schoolerp.dob"

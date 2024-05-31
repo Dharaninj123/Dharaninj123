@@ -11,7 +11,7 @@
 
         <item
             android:id="@+id/nav_studentId"
-            android:icon="@drawable/baseline_person_24"
+            android:icon="@drawable/id_baseline_3p_24"
             android:title="Student ID - 24RJ19"/>
 
 
@@ -23,12 +23,12 @@
 
        <item
            android:id="@+id/nav_aadhaar"
-           android:icon="@drawable/baseline_bookmarks_24"
+           android:icon="@drawable/baseline_file_copy_24"
            android:title="@string/aadhaar"/>
 
         <item
             android:id="@+id/nav_casteCertificate"
-            android:icon="@drawable/result"
+            android:icon="@drawable/castebaseline_forum_24"
             android:title="@string/caste_certificate"/>
 
 

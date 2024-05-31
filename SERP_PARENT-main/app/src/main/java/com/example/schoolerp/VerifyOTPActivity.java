@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,13 +41,13 @@ public class VerifyOTPActivity extends AppCompatActivity {
         EditText inputCode2 = findViewById(R.id.inputCode2);
         EditText inputCode3 = findViewById(R.id.inputCode3);
         EditText inputCode4 = findViewById(R.id.inputCode4);
+        Button buttonVerify = findViewById(R.id.buttonVerify);
 
         // Move focus to next input code automatically
         setEditTextChangeListener(inputCode1, inputCode2);
         setEditTextChangeListener(inputCode2, inputCode3);
         setEditTextChangeListener(inputCode3, inputCode4);
 
-        Button buttonVerify = findViewById(R.id.buttonVerify);
         buttonVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,10 +57,28 @@ public class VerifyOTPActivity extends AppCompatActivity {
                 String code4 = inputCode4.getText().toString().trim();
 
                 if (!code1.isEmpty() && !code2.isEmpty() && !code3.isEmpty() && !code4.isEmpty()) {
-                    // All input fields are filled, concatenate OTP
-                    String otp = code1 + code2 + code3 + code4;
-                    // Call API to verify OTP
-                    verifyOTP(otp);
+                    // Start the blink animation
+                    Animation blinkAnimation = AnimationUtils.loadAnimation(VerifyOTPActivity.this, R.anim.blink);
+                    view.startAnimation(blinkAnimation);
+
+                    // Call API to verify OTP after the animation ends
+                    blinkAnimation.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+                            // Optional: actions to perform when the animation starts
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            String otp = code1 + code2 + code3 + code4;
+                            verifyOTP(otp);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+                            // Optional: actions to perform when the animation repeats
+                        }
+                    });
                 } else {
                     // Display a message indicating all fields must be filled
                     Toast.makeText(VerifyOTPActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();

@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../../GANGADHARAIAH%20K/.android/icons/material/materialicons/download_for_offline/baseline_download_for_offline_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../../GANGADHARAIAH%20K/.android/icons/material/materialicons/forum/baseline_forum_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="baseline_download_for_offline_24" />
+                            <entry key="color" value="111111" />
+                            <entry key="outputName" value="castebaseline_forum_24" />
                             <entry key="sourceFile" value="C:\Users\GANGADHARAIAH K\Desktop\sclerp\SERP_PARENT-main" />
                           </map>
                         </option>

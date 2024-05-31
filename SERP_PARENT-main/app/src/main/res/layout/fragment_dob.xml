@@ -10,12 +10,12 @@ tools:context=".AadhaarFragment">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:src="@drawable/cdob" />
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="30dp"
-    android:src="@drawable/baseline_download_for_offline_24"
-    android:paddingStart="300dp" />
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingStart="300dp"
+        android:src="@drawable/baseline_download_for_offline_24" />
 
 
 </FrameLayout>

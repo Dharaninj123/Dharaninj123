@@ -143,8 +143,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="724" />
+                            <option name="x" value="20" />
+                            <option name="y" value="710" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -159,6 +159,15 @@
                             <option name="y" value="1368" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_nav_report_to_result1">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -168,19 +177,7 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="272" />
-                            <option name="y" value="1388" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="nav_studentId">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="498" />
-                            <option name="y" value="722" />
+                            <option name="y" value="1371" />
                           </Point>
                         </option>
                       </LayoutPositions>

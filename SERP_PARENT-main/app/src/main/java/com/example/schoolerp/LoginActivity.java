@@ -2,12 +2,15 @@ package com.example.schoolerp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
@@ -39,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotPasswordButton = findViewById(R.id.forgotpassword);
         signup = findViewById(R.id.signup);
 
-       /* Controller crobj = Controller.getInstance();
+        Controller crobj = Controller.getInstance();
         // Initialize Retrofit service
         apiService = crobj.getApiService();
 
@@ -59,23 +62,45 @@ public class LoginActivity extends AppCompatActivity {
 
                 loginButton.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(View view) {
+                        public void onClick(View v) {
                                 String mobile_number = login_mobile_number.getText().toString().trim();
                                 String password = login_password.getText().toString().trim();
 
                                 // Check if fields are empty
-                                if (TextUtils.isEmpty(mobile_number) || TextUtils.isEmpty(password)) {
-                                        Toast.makeText(LoginActivity.this, "Mobile Number/Password Required.", Toast.LENGTH_SHORT).show();
-                                } else {
-                                        // Validate the information
-                                        boolean isValid = validateInfo(mobile_number, password);
+                            if (TextUtils.isEmpty(mobile_number) || TextUtils.isEmpty(password)) {
+                                Toast.makeText(LoginActivity.this, "Mobile Number/Password Required.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // Validate the information
+                                boolean isValid = validateInfo(mobile_number, password);
 
-                                        if (isValid) {
-                                                login(mobile_number, password);
+                                if (isValid) {
+                                    // Start the blink animation
+                                    Animation blinkAnimation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.blink);
+                                    v.startAnimation(blinkAnimation);
+
+                                    // Navigate to the next page after the animation ends
+                                    blinkAnimation.setAnimationListener(new Animation.AnimationListener() {
+                                        @Override
+                                        public void onAnimationStart(Animation animation) {
+                                            // Optional: actions to perform when the animation starts
                                         }
+
+                                        @Override
+                                        public void onAnimationEnd(Animation animation) {
+                                            // Navigate to the next page
+                                            login(mobile_number, password);
+                                        }
+
+                                        @Override
+                                        public void onAnimationRepeat(Animation animation) {
+                                            // Optional: actions to perform when the animation repeats
+                                        }
+                                    });
                                 }
+                            }
                         }
                 });
+
 
                 forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -222,30 +247,7 @@ public class LoginActivity extends AppCompatActivity {
                 // For example, if you have a TextView in the navigation bar:
                 TextView navBarTextView = findViewById(R.id.nameView);
                 navBarTextView.setText(studentName);
-        }*/
-        forgotPasswordButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, SendOTPActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, Home_erp.class);
-                startActivity(intent);
-            }
-        });
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, Home_erp.class);
-                startActivity(intent);
-            }
-        });
-
+        }
 
     }
-}
+

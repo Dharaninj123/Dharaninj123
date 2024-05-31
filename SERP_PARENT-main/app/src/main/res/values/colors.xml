@@ -7,6 +7,8 @@
     <color name="purple">#171313</color>
     <color name="darkyellow">#FFC107</color>
     <color name="transparent">#00000000</color>
+    <color name="green">#33CC33</color>
+    <color name="red">#FF0000</color>
 
 </resources>
 
