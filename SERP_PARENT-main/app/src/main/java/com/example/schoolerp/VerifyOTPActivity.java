@@ -58,7 +58,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
                 if (!code1.isEmpty() && !code2.isEmpty() && !code3.isEmpty() && !code4.isEmpty()) {
                     // Start the blink animation
-                    Animation blinkAnimation = AnimationUtils.loadAnimation(VerifyOTPActivity.this, R.anim.blink);
+                    Animation blinkAnimation = AnimationUtils.loadAnimation(VerifyOTPActivity.this, R.anim.blink_animation);
                     view.startAnimation(blinkAnimation);
 
                     // Call API to verify OTP after the animation ends
@@ -90,11 +90,12 @@ public class VerifyOTPActivity extends AppCompatActivity {
     private void verifyOTP(String otp) {
         // Initialize Retrofit service
         ApiService apiService = Controller.getApiService();
+        String mobileNumber = getIntent().getStringExtra("mobileNumber");
         // Call the API to verify OTP
-        Call<Void> call = apiService.verifyOTP(otp);
-        call.enqueue(new Callback<Void>() {
+        Call<SendOTPResponse> call = apiService.verifyOTP(mobileNumber,otp);
+        call.enqueue(new Callback<SendOTPResponse>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<SendOTPResponse> call, Response<SendOTPResponse> response) {
                 if (response.isSuccessful()) {
                     // OTP verification successful, proceed to SignupActivity
                     Intent intent = new Intent(VerifyOTPActivity.this, SignupActivity.class);
@@ -106,12 +107,13 @@ public class VerifyOTPActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<SendOTPResponse> call, Throwable t) {
                 // Error occurred while verifying OTP, display error message
                 Toast.makeText(VerifyOTPActivity.this, "Failed to verify OTP. Please try again.", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 
     // Method to move focus to the next EditText when a digit is entered
     private void setEditTextChangeListener(final EditText currentEditText, final EditText nextEditText) {

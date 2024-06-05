@@ -52,6 +52,25 @@
                 android:textColorHint="@color/grey" />
 
             <EditText
+                android:id="@+id/signup_mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/baseline_local_phone_24"
+                android:drawablePadding="8dp"
+                android:hint="@string/mobile_number"
+                android:autofillHints="Mobile number"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:endIconMode="clear_text"/>
+
+            <EditText
                 android:id="@+id/signup_dob"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

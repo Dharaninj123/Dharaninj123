@@ -221,7 +221,7 @@
                         android:layout_row="0"
                         android:layout_column="0"
                         android:layout_gravity="center"
-                        android:text="Report"
+                        android:text="Student Report"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>

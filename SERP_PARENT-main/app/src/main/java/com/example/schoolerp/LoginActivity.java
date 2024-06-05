@@ -2,7 +2,6 @@ package com.example.schoolerp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -42,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotPasswordButton = findViewById(R.id.forgotpassword);
         signup = findViewById(R.id.signup);
 
-        Controller crobj = Controller.getInstance();
+       Controller crobj = Controller.getInstance();
         // Initialize Retrofit service
         apiService = crobj.getApiService();
 
@@ -75,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                 if (isValid) {
                                     // Start the blink animation
-                                    Animation blinkAnimation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.blink);
+                                    Animation blinkAnimation = AnimationUtils.loadAnimation(LoginActivity.this, R.anim.blink_animation);
                                     v.startAnimation(blinkAnimation);
 
                                     // Navigate to the next page after the animation ends
@@ -132,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                 loginRequest.setMobile_number(mobile_number);
                 loginRequest.setPassword(password);
 
-                Call<LoginResponse> loginResponseCall = apiService.loginUser(loginRequest);
+            Call<LoginResponse> loginResponseCall = apiService.loginUser(mobile_number, password);
                 loginResponseCall.enqueue(new Callback<LoginResponse>() {
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -140,14 +139,14 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                         LoginResponse loginResponse = response.body();
                                         // Store access token securely
-                                        storeAccessToken(loginResponse.getAccessToken());
+                                        storeAccessToken(loginResponse.getAccess());
                                         // Fetch and display student details
                                         fetchAndDisplayStudentDetails();
                                         // Start HomeActivity with data after a delay
                                         new Handler().postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                        startActivity(new Intent(LoginActivity.this, Home_erp.class).putExtra("data", loginResponse.getMobile_number()));
+                                                        startActivity(new Intent(LoginActivity.this, Home_erp.class).putExtra("data", loginResponse.getAccess()));
                                                 }
                                         }, 700);
                                 } else {
@@ -250,4 +249,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+
 

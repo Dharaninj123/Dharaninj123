@@ -44,7 +44,7 @@ public class SendOTPActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (validateMobileNumber()) {
                     // Start the blink animation
-                    Animation blinkAnimation = AnimationUtils.loadAnimation(SendOTPActivity.this, R.anim.blink);
+                    Animation blinkAnimation = AnimationUtils.loadAnimation(SendOTPActivity.this, R.anim.blink_animation);
                     view.startAnimation(blinkAnimation);
 
                     // Proceed to get OTP after the animation ends
@@ -87,10 +87,11 @@ public class SendOTPActivity extends AppCompatActivity {
         ApiService apiService = Controller.getApiService();
 
         // Call the API to send OTP
-        Call<Void> call = apiService.sendOTP(mobileNumber);
-        call.enqueue(new Callback<Void>() {
+        Call<SendOTPResponse> call = apiService.sendOTP(mobileNumber);
+        call.enqueue(new Callback<SendOTPResponse>() {
+
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<SendOTPResponse> call, Response<SendOTPResponse> response) {
                 if (response.isSuccessful()) {
                     // OTP sent successfully, proceed to verify OTP
                     Intent intent = new Intent(SendOTPActivity.this, VerifyOTPActivity.class);
@@ -103,7 +104,7 @@ public class SendOTPActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<SendOTPResponse> call, Throwable t) {
                 // Error occurred while sending OTP, log the error
                 Log.e("SendOTPActivity", "Error sending OTP: " + t.getMessage());
                 // Show error message
@@ -112,3 +113,7 @@ public class SendOTPActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
+
