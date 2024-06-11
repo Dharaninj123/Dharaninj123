@@ -1,13 +1,16 @@
-
 package com.example.schoolerp;
 
-        import android.os.Bundle;
-        import androidx.fragment.app.Fragment;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
+import android.os.Bundle;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Student_Profile extends Fragment {
+
+
 
     public Student_Profile() {
         // Required empty public constructor

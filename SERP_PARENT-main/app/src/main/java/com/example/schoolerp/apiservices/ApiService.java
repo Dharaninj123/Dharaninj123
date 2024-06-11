@@ -32,13 +32,8 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("login/")
-    Call<LoginResponse> loginUser (@Field("username") String username,@Field("password") String password);
+    Call<LoginResponse> loginUser (@Field("username") String username,@Field("password") String password,@Field("user_type") int user_type);
 
-    @POST("save-token")
-    Call<Void> saveFCMToken(@Body FCMTokenRequest tokenRequest);
-
-    @POST("storeToken")
-    Call<Void> sendToken(@Body FCMTokenRequest tokenRequest);
 
     @FormUrlEncoded
     @POST("generate-otp/")
@@ -56,6 +51,6 @@ public interface ApiService {
     @GET("student/details")
     Call<StudentsDetailsResponse> getStudentDetails(@Header("Authorization") String authorizationHeader);
 
-    Call<LoginResponse> loginUser(String mob, String password, String token);
+
 
 }

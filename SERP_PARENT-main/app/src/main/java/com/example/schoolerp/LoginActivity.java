@@ -131,18 +131,18 @@ public class LoginActivity extends AppCompatActivity {
                 loginRequest.setMobile_number(mobile_number);
                 loginRequest.setPassword(password);
 
-            Call<LoginResponse> loginResponseCall = apiService.loginUser(mobile_number, password);
+            Call<LoginResponse> loginResponseCall = apiService.loginUser(mobile_number, password,2);
                 loginResponseCall.enqueue(new Callback<LoginResponse>() {
                         @Override
                         public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                                 if (response.isSuccessful()) {
                                         Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                         LoginResponse loginResponse = response.body();
-                                        // Store access token securely
-                                        storeAccessToken(loginResponse.getAccess());
-                                        // Fetch and display student details
-                                        fetchAndDisplayStudentDetails();
-                                        // Start HomeActivity with data after a delay
+                                    SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
+                                    editor.putString("AccessToken",loginResponse.getAccess());
+                                    editor.putString("Refresh",loginResponse.getRefresh());
+                                    editor.apply();
+
                                         new Handler().postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<LoginResponse> call, Throwable t) {
-                                Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Login Failed" +t.getMessage(),Toast.LENGTH_SHORT).show();
                         }
                 });
         }

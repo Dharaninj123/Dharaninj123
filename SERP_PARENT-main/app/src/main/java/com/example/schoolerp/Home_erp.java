@@ -1,6 +1,7 @@
 package com.example.schoolerp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -71,6 +72,14 @@ public class Home_erp extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.nav_logout){
+            SharedPreferences.Editor editor= getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
+            editor.clear();
+            editor.apply();
+            Intent iHome = new Intent(Home_erp.this, LoginActivity.class);
+            startActivity(iHome);
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 

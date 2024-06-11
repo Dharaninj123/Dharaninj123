@@ -1,6 +1,7 @@
 package com.example.schoolerp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -22,13 +23,19 @@ public class SplashActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 return insets;
         });
-
-        Intent iHome = new Intent(SplashActivity.this, LoginActivity.class);
+        SharedPreferences spf= getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(iHome);
+                String accessToken= spf.getString("AccessToken","");
+                if (accessToken.equals("")){
+                    Intent iHome = new Intent(SplashActivity.this, LoginActivity.class);
+                    startActivity(iHome);
+                } else{
+                    Intent iHome = new Intent(SplashActivity.this, Home_erp.class);
+                    startActivity(iHome);
+                }
                 finish();
             }
         },4000);

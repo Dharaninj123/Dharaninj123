@@ -57,65 +57,6 @@ public class Controller {
         return apiService;
     }
 
-    public void sendTokenToServer() {
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful() && task.getResult() != null) {
-                        String token = task.getResult();
-                        MySharedPreferences.saveString("FCMToken", token);
-                        sendTokenToServer(token);
-                    }
-                });
-    }
-
-    private void sendTokenToServer(String token) {
-        FCMTokenRequest tokenRequest = new FCMTokenRequest(token);
-        Call<Void> call = apiService.saveFCMToken(tokenRequest);
-        call.enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.isSuccessful()) {
-                    Log.d("FCMToken", "Token sent to server successfully");
-                } else {
-                    Log.e("FCMToken", "Failed to send token to server");
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Void> call, Throwable t) {
-                Log.e("FCMToken", "Error sending token to server: " + t.getMessage());
-            }
-        });
-    }
-
-    public void makeApiCall(String accessToken) {
-        // Form the Authorization header
-        String authorizationHeader = "Bearer " + accessToken;
-
-        // Create the API call with the authorization header
-        Call<StudentsDetailsResponse> call = apiService.getStudentDetails(authorizationHeader);
-
-        // Enqueue the call asynchronously
-        call.enqueue(new Callback<StudentsDetailsResponse>() {
-            @Override
-            public void onResponse(Call<StudentsDetailsResponse> call, Response<StudentsDetailsResponse> response) {
-                if (response.isSuccessful() && response.body() != null) {
-                    // Handle successful response
-                    StudentsDetailsResponse studentDetails = response.body();
-                    // Process student details
-                } else {
-                    // Handle unsuccessful response
-                    // Log error or show error message
-                }
-            }
-
-            @Override
-            public void onFailure(Call<StudentsDetailsResponse> call, Throwable t) {
-                // Handle failure
-                t.printStackTrace();
-            }
-        });
-    }
 
     // If you need to create an instance of ApiService with a different class
     public ApiService create(Class<ApiService> apiServiceClass) {
