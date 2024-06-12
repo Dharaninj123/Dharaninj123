@@ -57,15 +57,15 @@ public class Home_erp extends AppCompatActivity {
         // Initialize Retrofit service
         apiService = crobj.getApiService();
 
-        SharedPreferences spf= getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        String token = spf.getString("AccessToken"," ");
+        SharedPreferences spf = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String token = spf.getString("AccessToken", " ");
 
         apiService.getStudentDetails(token).enqueue(new Callback<ProfileResponse>() {
 
 
             @Override
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
-                Toast.makeText(Home_erp.this,response.body().getfName(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home_erp.this, response.body().getfName(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
