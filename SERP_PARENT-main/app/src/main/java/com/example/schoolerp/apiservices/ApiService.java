@@ -48,7 +48,7 @@ public interface ApiService {
     @GET("student-details")
     Call<StudentsDetailsResponse> getStudentDetails();
 
-    @GET("student/details")
+    @GET("student/")
     Call<StudentsDetailsResponse> getStudentDetails(@Header("Authorization") String authorizationHeader);
 
 

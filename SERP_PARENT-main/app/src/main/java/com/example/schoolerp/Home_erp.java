@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,13 +15,20 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.schoolerp.apiservices.ApiService;
+import com.example.schoolerp.controller.Controller;
 import com.example.schoolerp.databinding.ActivityHomeErpBinding;
 import com.google.android.material.navigation.NavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Home_erp extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeErpBinding binding;
+    private ApiService apiService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +52,31 @@ public class Home_erp extends AppCompatActivity {
 
         // Check if activity is started from notification
         handleNotificationIntent(getIntent());
+
+        Controller crobj = Controller.getInstance();
+        // Initialize Retrofit service
+        apiService = crobj.getApiService();
+
+        SharedPreferences spf= getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String token = spf.getString("AccessToken"," ");
+
+        apiService.getStudentDetails(token).enqueue(new Callback<ProfileResponse>() {
+
+
+            @Override
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+                Toast.makeText(Home_erp.this,response.body().getfName(),Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+                Toast.makeText(Home_erp.this, "Failed to fetch student details", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
