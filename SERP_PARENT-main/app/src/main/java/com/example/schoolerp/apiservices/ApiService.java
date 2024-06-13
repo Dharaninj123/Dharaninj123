@@ -3,6 +3,7 @@ package com.example.schoolerp.apiservices;
 import com.example.schoolerp.FCMTokenRequest;
 import com.example.schoolerp.LoginRequest;
 import com.example.schoolerp.LoginResponse;
+import com.example.schoolerp.ProfileResponse;
 import com.example.schoolerp.SendOTPResponse;
 import com.example.schoolerp.SignupRequest;
 import com.example.schoolerp.SignupResponse;
@@ -49,7 +50,7 @@ public interface ApiService {
     Call<StudentsDetailsResponse> getStudentDetails();
 
     @GET("student/")
-    Call<StudentsDetailsResponse> getStudentDetails(@Header("Authorization") String authorizationHeader);
+    Call<ProfileResponse> getStudentDetails(@Header("Authorization") String authorizationHeader);
 
 
 

@@ -23,7 +23,6 @@ import com.google.android.material.navigation.NavigationView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 public class Home_erp extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -59,7 +58,7 @@ public class Home_erp extends AppCompatActivity {
 
         SharedPreferences spf = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String token = spf.getString("AccessToken", " ");
-
+       //token = "Bearer "+token;
         apiService.getStudentDetails(token).enqueue(new Callback<ProfileResponse>() {
 
 
