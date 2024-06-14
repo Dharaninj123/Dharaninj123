@@ -89,8 +89,6 @@ public class Home_erp extends AppCompatActivity {
         });
 
     }
-
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
