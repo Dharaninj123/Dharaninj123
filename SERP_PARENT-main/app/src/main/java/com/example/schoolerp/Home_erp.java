@@ -58,18 +58,32 @@ public class Home_erp extends AppCompatActivity {
 
         SharedPreferences spf = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String token = spf.getString("AccessToken", " ");
-       //token = "Bearer "+token;
+       token = "Bearer "+token;
         apiService.getStudentDetails(token).enqueue(new Callback<ProfileResponse>() {
 
 
             @Override
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
-                Toast.makeText(Home_erp.this, response.body().getfName(), Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    if (response.body() == null) {
+                        Toast.makeText(Home_erp.this, "Response is null", Toast.LENGTH_SHORT).show();
+
+                    } else if (response.body().getfName() == null) {
+                        Toast.makeText(Home_erp.this, "First name is null", Toast.LENGTH_SHORT).show();
+
+                    }else{
+                        Toast.makeText(Home_erp.this, "Firstname: " + response.body().getfName(), Toast.LENGTH_SHORT).show();
+
+                    }
+
+                } else {
+                    Toast.makeText(Home_erp.this, "response message: " + response.message() + "", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
             public void onFailure(Call<ProfileResponse> call, Throwable t) {
-                Toast.makeText(Home_erp.this, "Failed to fetch student details", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Home_erp.this, "Failed to fetch student details"+t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });
