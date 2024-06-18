@@ -103,16 +103,19 @@
         tools:layout="@layout/fragment_sport_cultural" />
 
 
+
     <fragment
         android:id="@+id/nav_dobCertificate"
         android:name="com.example.schoolerp.dob"
-        android:label="Student DOB"
+        android:label="Birth Certificate"
         tools:layout="@layout/fragment_dob" />
+
     <fragment
         android:id="@+id/nav_aadhaar"
         android:name="com.example.schoolerp.AadhaarFragment"
         android:label="Student Aadhaar"
         tools:layout="@layout/fragment_aadhaar" />
+
     <fragment
         android:id="@+id/nav_casteCertificate"
         android:name="com.example.schoolerp.CasteCertificate"

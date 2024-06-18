@@ -11,9 +11,9 @@
     <string name="login">Login</string>
     <string name="don_t_have_an_account">Don\'t have an account\?</string>
     <string name="create">Create</string>
-    <string name="signup">Signup</string>
+    <string name="signup">SignUp</string>
     <string name="verify_otp">Verify OTP</string>
-    <string name="already_have_an_account">Already have an account.</string>
+    <string name="already_have_an_account">Already have an account?</string>
     <string name="name">Name</string>
     <string name="dob">DOB</string>
     <string name="password">Password</string>
@@ -71,7 +71,6 @@
 
        </string>
     <string name="introduction">Introduction</string>
-    <string name="forgot_password">Forgot Password?</string>
     <string name="schoolname">SchoolName</string>
     <string name="profile">Profile</string>
     <string name="large_text">
@@ -180,5 +179,16 @@
     <string name="_2021">2021</string>
     <string name="today_s_activity">Today\'s Activity</string>
     <string name="view_result">View Result</string>
+    <string name="forgot_password">Forgot Password?\n</string>
+    <string name="company">Company</string>
+    <string name="company_name">Company Name</string>
+    <string name="occupation">Occupation</string>
+    <string name="degree">Degree</string>
+    <string name="qualification">Qualification</string>
+    <string name="example_gmail_com">example@gmail.com</string>
+    <string name="email">Email</string>
+    <string name="mother_name">Mother Name</string>
+    <string name="mother">Mother</string>
+    <string name="upload_documents">Upload Documents</string>
 
 </resources>

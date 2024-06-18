@@ -38,12 +38,12 @@
             android:textSize="14sp"/>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
             android:layout_marginStart="60dp"
             android:layout_marginEnd="60dp"
             android:layout_marginTop="20dp"
-            android:background="#F3EFE4"
+            android:background="@drawable/rounded_textview"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -73,22 +73,14 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="70dp"
-            android:background="#EDC246" />
-
         <Button
             android:id="@+id/buttonGetotp"
-            android:layout_width="272dp"
-            android:layout_height="60dp"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_margin="30dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="@color/black"
+            android:background="@drawable/rounded_button"
             android:text="@string/get_otp"
             android:textColor="@color/white"
             android:textSize="18sp" />

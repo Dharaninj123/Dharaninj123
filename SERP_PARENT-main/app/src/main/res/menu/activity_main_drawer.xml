@@ -31,6 +31,11 @@
             android:icon="@drawable/castebaseline_forum_24"
             android:title="@string/caste_certificate"/>
 
+        <item
+            android:id="@+id/nav_uploadDocuments"
+            android:icon="@drawable/castebaseline_forum_24"
+            android:title="@string/upload_documents"/>
+
 
 
     </group>
