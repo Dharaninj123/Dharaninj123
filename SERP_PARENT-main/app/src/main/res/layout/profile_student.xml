@@ -377,7 +377,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#c0c0c0"/>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -395,15 +394,30 @@
                         android:textColor="@color/black"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/fmailinput"
+
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="example@gmail.com"
-                        android:textColor="@color/black"
-                        android:background="@null"/>
+                        android:orientation="vertical">
+
+
+                        <EditText
+                            android:id="@+id/fmailinput"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="example@gmail.com"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+
+                    </LinearLayout>
+
                 </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c0c0c0"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -485,6 +499,33 @@
                         android:textColor="@color/black"
                         android:background="@null"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/faddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Address"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/faddressinput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Address"
+                        android:textColor="@color/black"
+                        android:background="@null"/>
+                </LinearLayout>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -677,6 +718,33 @@
                         android:textColor="@color/black"
                         android:background="@null"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/maddress"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Address"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                    <EditText
+                        android:id="@+id/maddressinput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Address"
+                        android:textColor="@color/black"
+                        android:background="@null"/>
+                </LinearLayout>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 

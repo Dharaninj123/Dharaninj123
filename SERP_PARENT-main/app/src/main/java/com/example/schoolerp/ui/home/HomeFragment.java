@@ -1,16 +1,25 @@
 package com.example.schoolerp.ui.home;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.schoolerp.LoginActivity;
 import com.example.schoolerp.R;
 
 public class HomeFragment extends Fragment {
@@ -67,6 +76,37 @@ public class HomeFragment extends Fragment {
 
 
         return root;
+    }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_items, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.nav_logout) {
+            SharedPreferences.Editor editor = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit();
+            editor.clear();
+            editor.apply();
+            Intent iHome = new Intent(requireActivity(), LoginActivity.class);
+            startActivity(iHome);
+            requireActivity().finish();
+            return true;
+        } else if (id == R.id.nav_about) {
+            NavHostFragment.findNavController(this).navigate(R.id.nav_about);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void openProfileFragment(View view) {

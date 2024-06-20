@@ -18,6 +18,15 @@
         android:theme="@style/Theme.SchoolERP"
         tools:targetApi="31">
         <activity
+            android:name=".EditStudentProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
+            android:name=".MoreFunctions"
+            android:exported="false" />
+        <activity
             android:name=".markscard"
             android:exported="false" />
         <activity

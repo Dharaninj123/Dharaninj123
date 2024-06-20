@@ -191,4 +191,19 @@
     <string name="mother">Mother</string>
     <string name="upload_documents">Upload Documents</string>
 
+    <string name="select_year">Dropdown Menu</string>
+    <string name="select">Select Year</string>
+
+
+    <string name="spinner_hint">Select a month...</string>
+    <string name="select_month">Select Month</string>
+
+    <string-array name="months_array">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>March</item>
+        <!-- Add other months if needed -->
+    </string-array>
+
+
 </resources>

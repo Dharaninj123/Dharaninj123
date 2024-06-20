@@ -1,64 +1,59 @@
 package com.example.schoolerp;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AttendanceFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AttendanceFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private Spinner monthSpinner;
+    private Button submitButton;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public AttendanceFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AttendanceFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AttendanceFragment newInstance(String param1, String param2) {
-        AttendanceFragment fragment = new AttendanceFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_attendance, container, false);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_attendance, container, false);
+        // Initialize the views
+        monthSpinner = view.findViewById(R.id.spinner);
+        submitButton = view.findViewById(R.id.button);
+
+        // Prepare the list with a hint
+        List<String> months = new ArrayList<>();
+        months.add(getString(R.string.spinner_hint));  // Hint
+        months.addAll(Arrays.asList(getResources().getStringArray(R.array.months_array)));
+
+        // Set up the Spinner with month options and hint
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
+                R.layout.spinner_item, months);
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        monthSpinner.setAdapter(adapter);
+
+        // Set initial selection to the hint (first item)
+        monthSpinner.setSelection(0);
+
+        // Handle button click
+        submitButton.setOnClickListener(v -> {
+            // Handle button click here
+            String selectedMonth = monthSpinner.getSelectedItem().toString();
+            if (selectedMonth.equals(getString(R.string.spinner_hint))) {
+                Toast.makeText(getContext(), "Please select a month", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Selected month: " + selectedMonth, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
     }
 }

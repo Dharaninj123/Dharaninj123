@@ -107,24 +107,31 @@ public class Home_erp extends AppCompatActivity {
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+        getMenuInflater().inflate(R.menu.menu_items, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.nav_logout){
-            SharedPreferences.Editor editor= getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
+        if(item.getItemId()==R.id.nav_logout) {
+            SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
             editor.clear();
             editor.apply();
             Intent iHome = new Intent(Home_erp.this, LoginActivity.class);
             startActivity(iHome);
             finish();
         }
+
+            if(item.getItemId()==R.id.nav_about){
+                Navigation.findNavController(this,R.id.nav_host_fragment_content_home_erp)
+                        .navigate(R.id.nav_about);
+            }
+
+
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     public boolean onSupportNavigateUp() {
