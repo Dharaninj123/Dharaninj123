@@ -29,11 +29,14 @@
             android:id="@+id/action_nav_home_to_result"
             app:destination="@+id/nav_result"/>
 
+
         <action
             android:id="@+id/action_nav_home_to_sportsandcultural"
             app:destination="@+id/nav_sportsandcultural"/>
 
     </fragment>
+
+
 
 
     <fragment
@@ -121,6 +124,14 @@
         android:name="com.example.schoolerp.CasteCertificate"
         android:label="Student Caste-Certificate"
         tools:layout="@layout/fragment_caste_certificate" />
+
+    <fragment
+        android:id="@+id/nav_uploadDocuments"
+        android:name="com.example.schoolerp.DocumentFragment"
+        android:label="Document"
+        tools:layout="@layout/fragment_document" />
+
+
 
 
 </navigation>
