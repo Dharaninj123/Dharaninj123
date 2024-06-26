@@ -126,12 +126,9 @@
         tools:layout="@layout/fragment_caste_certificate" />
 
     <fragment
-        android:id="@+id/nav_uploadDocuments"
+        android:id="@+id/nav_Documents"
         android:name="com.example.schoolerp.DocumentFragment"
         android:label="Document"
         tools:layout="@layout/fragment_document" />
-
-
-
 
 </navigation>
