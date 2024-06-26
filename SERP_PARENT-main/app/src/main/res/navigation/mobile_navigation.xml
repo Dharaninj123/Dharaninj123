@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/nav_attendance"
-        android:label="Student Tracking"
+        android:label="Attendance"
         android:name="com.example.schoolerp.ui.attendance.AttendanceFragment"
         tools:layout="@layout/fragment_attendance" />
 
@@ -57,7 +57,7 @@
 
     <fragment
         android:id="@+id/nav_result"
-        android:name="com.example.schoolerp.ResultFragment"
+        android:name="com.example.schoolerp.ui.result.ResultFragment"
         android:label="Academin Report"
         tools:layout="@layout/fragment_result" >
 

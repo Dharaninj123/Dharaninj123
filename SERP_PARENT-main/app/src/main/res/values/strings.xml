@@ -189,21 +189,43 @@
     <string name="email">Email</string>
     <string name="mother_name">Mother Name</string>
     <string name="mother">Mother</string>
-    <string name="upload_documents">Upload Documents</string>
+    <string name="documents">Documents</string>
 
-    <string name="select_year">Dropdown Menu</string>
-    <string name="select">Select Year</string>
+    <string name="select_year">Select Year</string>
+    <string name="spinner_hint1">Select a year...</string>
 
+    <string-array name="year_array">
+        <item>2023-2024</item>
+        <item>2022-2023</item>
+        <item>2021-2022</item>
+        <item>2020-2021</item>
 
-    <string name="spinner_hint">Select a month...</string>
-    <string name="select_month">Select Month</string>
-
-    <string-array name="months_array">
-        <item>Jan</item>
-        <item>Feb</item>
-        <item>March</item>
         <!-- Add other months if needed -->
     </string-array>
+
+
+    <string name="spinner_hint2">Select a month...</string>
+    <string name="select_month">Select Month</string>
+
+
+    <string-array name="months_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+        <!-- Add other months if needed -->
+    </string-array>
+
+    <string name="MAPS_API_KEY">AIzaSyCfr6amiOo7pg5CO1C5BjL-2DKO1ujh-kw</string>
+    <string name="browse_file">Browse File</string>
 
 
 </resources>

@@ -16,6 +16,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+
     }
 
     buildTypes {
@@ -24,14 +26,26 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8;
-        targetCompatibility = JavaVersion.VERSION_1_8;
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     buildFeatures {
         viewBinding = true
     }
+
+    sourceSets {
+        getByName("main") {
+            java.srcDirs("src/main/java", "src/main/java/result")
+        }
+    }
 }
+
+
+
+
 
 dependencies {
 
@@ -64,6 +78,11 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging:23.4.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation ("com.google.android.gms:play-services-maps:18.0.2")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation ("com.google.android.gms:play-services-maps:18.0.0")
+    implementation("com.google.android.gms:play-services-basement:18.0.2")
+
+
 
 
 }

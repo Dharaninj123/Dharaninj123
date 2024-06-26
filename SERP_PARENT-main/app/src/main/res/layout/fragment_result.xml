@@ -1,71 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ResultFragment">
+    android:orientation="vertical"
+    android:padding="10dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.result.ResultFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="vertical"/>
+        android:id="@+id/linear_layout"
+        android:orientation="vertical"
+        android:padding="10dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
+        <!-- Text Label -->
+        <TextView
+            android:id="@+id/select_month"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="@string/select_year"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp" />
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/select_the_year"
-        android:textColor="@color/black"
-        />
-
-    <Button
-        android:id="@+id/result1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/_2024"
-        android:textColor="@color/black"/>
-
-    <Button
-        android:id="@+id/result2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/_2023"
-        android:textColor="@color/black"/>
+        <!-- Spinner Element -->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/result3"
-        android:layout_width="match_parent"
+        android:id="@+id/button"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="130dp"
-        android:text="@string/_2022"
-        android:textColor="@color/black"/>
-
-    <Button
-        android:id="@+id/result4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="180dp"
-        android:text="@string/_2021"
-        android:textColor="@color/black"/>
-
+        android:gravity="center"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_button"
+        android:layout_below="@id/linear_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>
-
 
 
