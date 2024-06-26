@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biege"
+    android:orientation="vertical"
+    tools:context=".Settings">
+
+    <Button
+        android:id="@+id/contacts_button"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:background="@drawable/rounded_button2"
+        android:drawableStart="@drawable/baseline_location_on_24"
+        android:drawablePadding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="2000000001"
+        android:textSize="20sp"
+        android:textAlignment="viewStart" />
+
+    <Button
+        android:id="@+id/security_scope_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/baseline_map_24"
+        android:background="@drawable/rounded_button2"
+        android:text="Map Settings"
+        android:drawablePadding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textAlignment="viewStart" />
+
+    <Button
+        android:id="@+id/playback_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_button2"
+        android:drawableStart="@drawable/baseline_more_time_24"
+        android:drawablePadding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Update Time"
+        android:textAlignment="viewStart" />
+
+</LinearLayout>

@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".EditStudentProfile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/studentprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="50dp"
+                app:cardBackgroundColor="@color/yellow"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/student"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:text="Student : Name"
+                        android:textSize="25sp"
+                        android:background="@color/yellow"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:src="@drawable/profilde" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/name"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/nameinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Name"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/section"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Class / Section"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/sectioninput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="6/B"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/dob"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Date of Birth"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/dobinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="26-09-2002"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/mobilenumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mobile Number"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/mobilenumberinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="91-"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/gender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Gender"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/genderinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Male/Female"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/bloodgroup"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Blood Group"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/bloodgroupinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="A"
+                            android:autofillHints="name"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/nation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nationality"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/nationinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Indian"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Status"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/statusinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Active"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Address"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/addressinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Address"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fatherprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="50dp"
+                app:cardBackgroundColor="@color/yellow"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/father"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Father : Name"
+                        android:textSize="25sp"
+                        android:paddingStart="10dp"
+                        android:background="@color/yellow"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:src="@drawable/profilde" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/fname"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/name"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/fnameinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Name"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/fmobilenumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mobile Number"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/fmobilenumberinput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="91-"
+                                android:textColor="@color/black"
+                                android:background="@null" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#c0c0c0"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/fmail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Email"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+
+                            <EditText
+                                android:id="@+id/fmailinput"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="example@gmail.com"
+                                android:textColor="@color/black"
+                                android:background="@null"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#c0c0c0"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/fqualification"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Qualification"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/fqualificationinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Degree"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/foccupation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Occupation"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/foccupationinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Occupation"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/fcompany"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Company"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/fcompanyinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Company Name"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/faddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Address"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/faddressinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Address"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/motherprofile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingTop="30dp"
+                android:paddingBottom="50dp"
+                app:cardBackgroundColor="@color/yellow"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/mother"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mother : Name"
+                        android:textSize="25sp"
+                        android:paddingStart="10dp"
+                        android:background="@color/yellow"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="20dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="140dp"
+                            android:src="@drawable/profilde" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/mname"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/name"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/mnameinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Name"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/mmobilenumber"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/mobile_number"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/mmobilenumberinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/_91"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/mmail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/email"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/mmailinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/example_gmail_com"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/mqualification"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/qualification"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/mqualificationinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/degree"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/moccupation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/occupation"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/moccupationinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/occupation"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/mcompany"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/company"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/mcompanyinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/company_name"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/maddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Address"
+                            android:textSize="18sp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                        <EditText
+                            android:id="@+id/maddressinput"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Address"
+                            android:textColor="@color/black"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
