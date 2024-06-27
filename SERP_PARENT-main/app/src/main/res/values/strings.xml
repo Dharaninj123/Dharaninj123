@@ -227,6 +227,9 @@
     <string name="MAPS_API_KEY">AIzaSyCfr6amiOo7pg5CO1C5BjL-2DKO1ujh-kw</string>
     <string name="browse_file">Browse File</string>
     <string name="student_report">Student Report</string>
+    <string name="share">Share</string>
+    <string name="download">Download</string>
+    <string name="print">Print</string>
 
 
 </resources>
