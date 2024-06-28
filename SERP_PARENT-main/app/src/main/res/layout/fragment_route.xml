@@ -7,371 +7,211 @@
     android:scrollbars="vertical"
     tools:context=".ui.home.HomeFragment">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/text_student_name_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="10dp"
-            android:text="@string/today_s_activity"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/journey"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Journey"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/status"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Status"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/pick"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Pickup Journey"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/pickup"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="pickup"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/stp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Drop Journey"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/stop"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="drop"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/pickjourney"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow"
-            android:paddingVertical="8dp"
-            android:text="Pick Journey"
-            android:paddingHorizontal="10dp"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/jorney1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Journey"
-            android:paddingHorizontal="10dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/stop1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Stop"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/place"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="place"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/bus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Bus"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/busNo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="BusNo"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/start"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Starts At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/end"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ends At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/dropjourney"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="10dp"
-            android:text="Drop Journey"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/jorney2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Journey"
-            android:paddingHorizontal="10dp"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
+            android:background="@color/white"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/stop2"
-                android:layout_width="0dp"
+                android:id="@+id/pickjourney"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Stop"
+                android:background="@color/yellow"
+                android:paddingVertical="8dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/pick_journey"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/place2"
-                android:layout_width="0dp"
+            <!-- Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="place"
-                android:textColor="@color/black" />
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/routeNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/route_no"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/inputRouteNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/route_01"
+                    android:textSize="18sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/busNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/bus_no"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/inputbusNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/bus_01"
+                    android:textSize="18sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/pickupPoint"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pickup_point"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/pickupPointinput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/uttarahalli"
+                    android:textSize="18sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/pickupDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pickup Date"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/pickupDateinput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/_26_06_2024"
+                    android:textSize="18sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp"
+                android:paddingHorizontal="10dp"
+                android:paddingBottom="8dp">
+
+                <TextView
+                    android:id="@+id/pickupTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pickup_time"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/pickupTimeinput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/_7_30_am"
+                    android:textSize="18sp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <!-- Line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/bus2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Bus"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/busNo."
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="BusNo"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/start2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Starts At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="8dp"
-            android:paddingHorizontal="10dp"
-            android:paddingBottom="8dp">
-
-            <TextView
-                android:id="@+id/end2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ends At"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/time3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Time"
-                android:textColor="@color/black" />
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </ScrollView>

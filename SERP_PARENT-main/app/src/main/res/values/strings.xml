@@ -230,6 +230,19 @@
     <string name="share">Share</string>
     <string name="download">Download</string>
     <string name="print">Print</string>
+    <string name="save">Save</string>
+    <string name="upload_file">Upload File</string>
+    <string name="enter_the_file_name">Enter the file name</string>
+    <string name="route_no">Route No.</string>
+    <string name="route_01">Route 01</string>
+    <string name="bus_01">Bus 01</string>
+    <string name="bus_no">Bus No.</string>
+    <string name="pickup_point">Pickup Point</string>
+    <string name="uttarahalli">Uttarahalli</string>
+    <string name="_26_06_2024">26-06-2024</string>
+    <string name="_7_30_am">7:30 AM</string>
+    <string name="pickup_time">Pickup Time</string>
+    <string name="pick_journey">Pick Journey</string>
 
 
 </resources>

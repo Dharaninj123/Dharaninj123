@@ -2,10 +2,13 @@ package com.example.schoolerp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -15,6 +18,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +69,7 @@ public class dob extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -81,12 +90,7 @@ public class dob extends Fragment {
         int id = item.getItemId();
 
         if (id == R.id.nav_share) {
-            SharedPreferences.Editor editor = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit();
-            editor.clear();
-            editor.apply();
-            Intent iHome = new Intent(requireActivity(), dob.class);
-            startActivity(iHome);
-            requireActivity().finish();
+            shareDrawable(requireContext(), R.drawable.cdob, "myfilename");
             return true;
         } else if (id == R.id.nav_download) {
             NavHostFragment.findNavController(this).navigate(R.id.nav_aadhaar);
@@ -97,5 +101,44 @@ public class dob extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void shareDrawable(Context context, int resourceId, String fileName) {
+        try {
+            // Convert drawable resource to bitmap
+            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), resourceId);
+
+            // Save bitmap to app folder
+            File outputFile = new File(context.getCacheDir(), fileName + ".png");
+            FileOutputStream outputStream = new FileOutputStream(outputFile);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+            outputStream.flush();
+            outputStream.close();
+            outputFile.setReadable(true, false);
+
+            // Share file
+            Uri uri = FileProvider.getUriForFile(context, "com.example.schoolerp.provider", outputFile);
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+            shareIntent.setType("image/png");
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            context.startActivity(Intent.createChooser(shareIntent, "Share image via"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(context, "Error sharing file: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void shareDocument() {
+        // Replace "your_document.pdf" with the actual file name
+        File file = new File(requireContext().getFilesDir(), "DOB.pdf");
+        Uri uri = FileProvider.getUriForFile(requireContext(), "com.example.schoolerp.provider", file);
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("application/pdf");
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+        startActivity(Intent.createChooser(shareIntent, "Share document via"));
     }
 }

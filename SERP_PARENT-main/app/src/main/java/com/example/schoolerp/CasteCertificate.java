@@ -16,6 +16,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.net.Uri;
+import androidx.core.content.FileProvider;
+
+import java.io.File;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CasteCertificate#newInstance} factory method to
@@ -61,6 +65,7 @@ public class CasteCertificate extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -76,17 +81,17 @@ public class CasteCertificate extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.nav_share) {
-            SharedPreferences.Editor editor = requireActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).edit();
-            editor.clear();
-            editor.apply();
-            Intent iHome = new Intent(requireActivity(), CasteCertificate.class);
-            startActivity(iHome);
-            requireActivity().finish();
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Share CasteCertificate Information");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Here is the CasteCertificate information you requested.");
+            startActivity(Intent.createChooser(shareIntent, "Share via"));
             return true;
         } else if (id == R.id.nav_download) {
             NavHostFragment.findNavController(this).navigate(R.id.nav_aadhaar);
@@ -97,5 +102,19 @@ public class CasteCertificate extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private void shareDocument() {
+        // Replace "your_document.pdf" with the actual file name
+        File file = new File(requireContext().getFilesDir(), "CasteCertificate.pdf");
+        Uri uri = FileProvider.getUriForFile(requireContext(), "com.example.schoolerp.provider", file);
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("application/pdf");
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+        startActivity(Intent.createChooser(shareIntent, "Share document via"));
     }
 }
