@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:scrollbars="vertical"
     tools:context=".ui.home.HomeFragment">
 
@@ -34,11 +35,6 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <!-- Line -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,7 +61,8 @@
                     android:layout_weight="1"
                     android:hint="@string/route_01"
                     android:textSize="18sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"/>
             </LinearLayout>
 
             <!-- Line -->
@@ -99,7 +96,8 @@
                     android:layout_weight="1"
                     android:hint="@string/bus_01"
                     android:textSize="18sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"/>
             </LinearLayout>
 
             <!-- Line -->
@@ -133,7 +131,8 @@
                     android:layout_weight="1"
                     android:hint="@string/uttarahalli"
                     android:textSize="18sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"/>
             </LinearLayout>
 
             <!-- Line -->
@@ -167,7 +166,8 @@
                     android:layout_weight="1"
                     android:hint="@string/_26_06_2024"
                     android:textSize="18sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"/>
             </LinearLayout>
 
             <!-- Line -->
@@ -201,14 +201,9 @@
                     android:layout_weight="1"
                     android:hint="@string/_7_30_am"
                     android:textSize="18sp"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"/>
             </LinearLayout>
-
-            <!-- Line -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/grey" />
 
         </LinearLayout>
 

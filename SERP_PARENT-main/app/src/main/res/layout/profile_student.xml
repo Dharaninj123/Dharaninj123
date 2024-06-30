@@ -35,12 +35,13 @@
                     android:id="@+id/student"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingStart="10dp"
+                    android:paddingStart="20dp"
                     android:text="Student"
-                    android:textSize="25sp"
+                    android:textSize="22sp"
                     android:background="@color/yellow"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:padding="6dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -58,13 +59,130 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:background="@null"
-                        android:paddingStart="20dp"
-                        android:hint="Name"
+                        android:paddingStart="10dp"
+                        android:text="Name"
                         android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:textSize="20sp" />
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/admissionNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Admission No."
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:paddingStart="20dp"/>
+
+                    <EditText
+                        android:id="@+id/admissionNoinput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="10001"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"
+                        android:background="@null"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/admissionDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Admission Date"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:paddingStart="20dp"/>
+
+                    <EditText
+                        android:id="@+id/admissionDateinput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/_26_06_2024"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:paddingEnd="10dp"
+                        android:background="@null"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/rollNo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Roll No."
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:paddingStart="20dp"/>
+
+                    <EditText
+                        android:id="@+id/rollNoinput"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="08"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
+                        android:background="@null"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/class1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Class"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:paddingStart="20dp"/>
+
+                    <EditText
+                        android:id="@+id/class1input"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="4th Std"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
+                        android:background="@null"/>
+                </LinearLayout>
+
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -78,20 +196,23 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Class / Section"
-                        android:textSize="18sp"
+                        android:text="Section"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:paddingStart="20dp"/>
 
                     <EditText
                         android:id="@+id/sectioninput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="6/B"
+                        android:hint="B"
                         android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -105,10 +226,10 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Date of Birth"
-                        android:textSize="18sp"
+                        android:text="DOB"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:paddingStart="20dp"/>
 
                     <EditText
                         android:id="@+id/dobinput"
@@ -117,35 +238,11 @@
                         android:layout_weight="1"
                         android:hint="26-09-2002"
                         android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
-
-                    <TextView
-                        android:id="@+id/mobilenumber"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Mobile Number"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/mobilenumberinput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="91-"
-                        android:textColor="@color/black"
-                        android:background="@null"/>
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -160,9 +257,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Gender"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:paddingStart="20dp"/>
 
                     <EditText
                         android:id="@+id/genderinput"
@@ -171,6 +268,8 @@
                         android:layout_weight="1"
                         android:hint="male/female"
                         android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
 
@@ -182,23 +281,23 @@
                     android:paddingBottom="8dp">
 
                     <TextView
-                        android:id="@+id/bloodgroup"
+                        android:id="@+id/board"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Blood Group"
-                        android:textSize="18sp"
+                        android:text="Board"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
-
+                        android:paddingStart="20dp"/>
                     <EditText
-                        android:id="@+id/bloodgroupinput"
+                        android:id="@+id/boardinput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="A"
-                        android:autofillHints="name"
+                        android:hint="CBSE"
                         android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
 
@@ -210,47 +309,23 @@
                     android:paddingBottom="8dp">
 
                     <TextView
-                        android:id="@+id/nation"
+                        android:id="@+id/medium"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Nationality"
-                        android:textSize="18sp"
+                        android:text="Medium"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:paddingStart="20dp"/>
                     <EditText
-                        android:id="@+id/nationinput"
+                        android:id="@+id/mediuminput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Indian"
+                        android:hint="English"
                         android:textColor="@color/black"
-                        android:background="@null"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
-
-                    <TextView
-                        android:id="@+id/status"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Status"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-                    <EditText
-                        android:id="@+id/statusinput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:hint="Active"
-                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
 
@@ -267,16 +342,18 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Address"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:paddingStart="20dp" />
                     <EditText
                         android:id="@+id/addressinput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:hint="Address"
+                        android:hint="@string/_32_2nd_cross_1st_main_road_jp_naagar_banglore_n_560078"
                         android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
 
@@ -309,7 +386,7 @@
                     android:layout_height="wrap_content"
                     android:text="Father"
                     android:textSize="25sp"
-                    android:paddingStart="10dp"
+                    android:paddingStart="20dp"
                     android:background="@color/yellow"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -336,88 +413,8 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
-
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
-
-                    <TextView
-                        android:id="@+id/fmobilenumber"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Mobile Number"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <EditText
-                            android:id="@+id/fmobilenumberinput"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="91-"
-                            android:textColor="@color/black"
-                            android:background="@null" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#c0c0c0"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
-
-                    <TextView
-                        android:id="@+id/fmail"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Email"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-
-                        <EditText
-                            android:id="@+id/fmailinput"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:hint="example@gmail.com"
-                            android:textColor="@color/black"
-                            android:background="@null"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#c0c0c0"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -432,9 +429,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Qualification"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold" />
+                        android:paddingStart="20dp" />
 
                     <EditText
                         android:id="@+id/fqualificationinput"
@@ -442,6 +439,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="Degree"
+                        android:textSize="16sp"
                         android:textColor="@color/black"
                         android:background="@null"/>
                 </LinearLayout>
@@ -470,6 +468,7 @@
                         android:layout_weight="1"
                         android:hint="Occupation"
                         android:textColor="@color/black"
+                        android:paddingEnd="10dp"
                         android:background="@null"/>
                 </LinearLayout>
 
