@@ -8,6 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="fragment_more_student_details">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="505" />
+                            <option name="y" value="689" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="nav_Documents">
                     <value>
                       <LayoutPositions>
@@ -129,6 +141,11 @@
                               </value>
                             </entry>
                             <entry key="action_nav_home_to_transport">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_student_Profile_to_fragment_more_student_details">
                               <value>
                                 <LayoutPositions />
                               </value>

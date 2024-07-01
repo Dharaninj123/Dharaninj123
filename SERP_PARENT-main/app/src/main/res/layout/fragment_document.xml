@@ -5,44 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingTop="60dp"
+    android:gravity="center"
     tools:context=".DocumentFragment">
 
-
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
             android:orientation="vertical"
             android:background="@drawable/dashedborder"
             android:gravity="center_horizontal"
-            android:padding="10dp"
-            android:layout_marginBottom="16dp"> <!-- Padding to ensure the border is around the content -->
-
-            <ImageView
-                android:id="@+id/documents"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:padding="10dp"
-                android:src="@drawable/baseline_file_copy_24" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/rounded_textview_with_underline"
-                android:gravity="center"
-                android:text="@string/enter_the_file_name"
-                android:padding="5dp"
-                android:textColor="@color/grey"
-                android:textSize="16sp" />
-
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            android:paddingVertical="20dp"> <!-- Padding to ensure the border is around the content -->
 
             <ImageView
                 android:id="@+id/image_file_icon"
-                android:layout_width="60dp"
-                android:layout_height="70dp"
-                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:src="@drawable/upload" />
 
             <TextView
@@ -52,37 +32,41 @@
                 android:gravity="center"
                 android:text="@string/upload_file"
                 android:textColor="@color/grey"
+                android:paddingTop="10dp"
                 android:textSize="16sp" /> <!-- Add margin to create space between the image and text -->
         </LinearLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="200dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="200dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"/>
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextFileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_the_file_name"
+            android:gravity="center"
+            android:inputType="text"
+            android:layout_margin="10dp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/rounded_textview_black"
         android:text="@string/save"
+        android:gravity="center"
         android:textColor="@color/white"
+        android:textAllCaps="false"
         android:textSize="20sp"
-        android:paddingVertical="5dp"
-        android:paddingHorizontal="35dp"/>
+        android:padding="15dp"
+        android:layout_marginHorizontal="80dp" />
 
 
 </LinearLayout>

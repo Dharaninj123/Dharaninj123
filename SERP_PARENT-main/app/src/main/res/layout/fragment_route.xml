@@ -32,17 +32,13 @@
                 android:paddingHorizontal="10dp"
                 android:text="@string/pick_journey"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingHorizontal="10dp"
-                android:paddingBottom="8dp">
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/routeNo"
@@ -50,9 +46,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/route_no"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:paddingStart="20dp"/>
 
                 <EditText
                     android:id="@+id/inputRouteNo"
@@ -60,24 +56,22 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/route_01"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:background="@color/transparent"/>
+                    android:paddingEnd="10dp"
+                    android:background="@null"/>
             </LinearLayout>
 
-            <!-- Line -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grey" />
+                android:background="@color/greyView"  />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingHorizontal="10dp"
-                android:paddingBottom="8dp">
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/busNo"
@@ -85,9 +79,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/bus_no"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:paddingStart="20dp"/>
 
                 <EditText
                     android:id="@+id/inputbusNo"
@@ -95,24 +89,22 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/bus_01"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:background="@color/transparent"/>
+                    android:paddingEnd="10dp"
+                    android:background="@null"/>
             </LinearLayout>
 
-            <!-- Line -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grey" />
+                android:background="@color/greyView"  />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingHorizontal="10dp"
-                android:paddingBottom="8dp">
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/pickupPoint"
@@ -120,9 +112,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/pickup_point"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:paddingStart="20dp"/>
 
                 <EditText
                     android:id="@+id/pickupPointinput"
@@ -130,34 +122,32 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/uttarahalli"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:background="@color/transparent"/>
+                    android:paddingEnd="10dp"
+                    android:background="@null"/>
             </LinearLayout>
 
-            <!-- Line -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grey" />
+                android:background="@color/greyView"  />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingHorizontal="10dp"
-                android:paddingBottom="8dp">
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/pickupDate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pickup Date"
+                    android:text="@string/pickup_point"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:paddingStart="20dp"/>
 
                 <EditText
                     android:id="@+id/pickupDateinput"
@@ -165,24 +155,22 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/_26_06_2024"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:background="@color/transparent"/>
+                    android:paddingEnd="10dp"
+                    android:background="@null"/>
             </LinearLayout>
 
-            <!-- Line -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/grey" />
+                android:background="@color/greyView"  />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="8dp"
-                android:paddingHorizontal="10dp"
-                android:paddingBottom="8dp">
+                android:paddingVertical="10dp">
 
                 <TextView
                     android:id="@+id/pickupTime"
@@ -190,9 +178,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/pickup_time"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:paddingStart="20dp"/>
 
                 <EditText
                     android:id="@+id/pickupTimeinput"
@@ -200,10 +188,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/_7_30_am"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
-                    android:background="@color/transparent"/>
+                    android:paddingEnd="10dp"
+                    android:background="@null"/>
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greyView"  />
 
         </LinearLayout>
 

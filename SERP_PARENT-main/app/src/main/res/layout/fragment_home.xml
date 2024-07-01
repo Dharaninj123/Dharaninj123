@@ -5,65 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingTop="20dp"
     tools:context=".ui.home.HomeFragment">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/yellow"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp">
-        <!-- Content for the CardView (if any) -->
-    </androidx.cardview.widget.CardView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="@color/white">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:drawableLeft="@drawable/baseline_home_24"
-                android:drawablePadding="8dp"
-                android:paddingEnd="20dp"
-                android:text="@string/schoolname"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-        </RelativeLayout>
-
-        <!-- Spacer to increase distance -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="32dp" />
-
-
-        <GridLayout
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:alignmentMode="alignMargins"
-            android:columnCount="1"
-            android:rowCount="5"
-            android:useDefaultMargins="true">
 
             <!-- Profile Card -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="8dp"
@@ -76,8 +26,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="75dp"
-                        android:layout_height="62dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/round_person_24" />
 
@@ -90,6 +41,13 @@
                         android:text="@string/profile"
                         android:textColor="@color/grey"
                         android:textSize="22sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -98,7 +56,7 @@
                 android:id="@+id/attendance"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="8dp"
@@ -111,10 +69,11 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="75dp"
-                        android:layout_height="47dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_gravity="center_vertical"
-                        android:src="@drawable/calendar" />
+                        android:src="@drawable/calendar"/>
 
                     <TextView
                         android:layout_width="0dp"
@@ -125,6 +84,14 @@
                         android:text="Attendance"
                         android:textColor="@color/grey"
                         android:textSize="20sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -133,7 +100,7 @@
                 android:id="@+id/studentTracking"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="8dp"
@@ -146,8 +113,9 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="77dp"
-                        android:layout_height="49dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/tracking" />
 
@@ -160,6 +128,13 @@
                         android:text="@string/student_tracking"
                         android:textColor="@color/grey"
                         android:textSize="22sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -168,7 +143,7 @@
                 android:id="@+id/transport"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="8dp"
@@ -181,8 +156,9 @@
                     android:layout_gravity="center">
 
                     <ImageView
-                        android:layout_width="79dp"
-                        android:layout_height="47dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/bus" />
 
@@ -195,6 +171,13 @@
                         android:text="@string/bus_tracking"
                         android:textColor="@color/grey"
                         android:textSize="22sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -203,7 +186,7 @@
                 android:id="@+id/report"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="8dp"
@@ -216,8 +199,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="79dp"
-                        android:layout_height="49dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/results" />
 
@@ -230,6 +214,13 @@
                         android:text="@string/student_report"
                         android:textColor="@color/grey"
                         android:textSize="22sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -238,7 +229,7 @@
                 android:id="@+id/sportsandcultural"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_margin="8dp"
+                android:layout_margin="12dp"
                 android:padding="16dp"
                 app:cardBackgroundColor="@color/yellow"
                 app:cardCornerRadius="8dp"
@@ -251,8 +242,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="83dp"
-                        android:layout_height="61dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginHorizontal="10dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/sports" />
 
@@ -265,9 +257,16 @@
                         android:text="@string/sports_and_cultural"
                         android:textColor="@color/grey"
                         android:textSize="22sp" />
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="15dp"
+                        android:layout_gravity="end"
+                        android:src="@drawable/baseline_arrow_forward_ios_24" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-        </GridLayout>
+
     </LinearLayout>
-</LinearLayout>
+

@@ -34,7 +34,17 @@
             android:id="@+id/action_nav_home_to_sportsandcultural"
             app:destination="@+id/nav_sportsandcultural"/>
 
+        <action
+            android:id="@+id/action_student_Profile_to_fragment_more_student_details"
+            app:destination="@id/fragment_more_student_details" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fragment_more_student_details"
+        android:name="com.example.schoolerp.MoreStudentDetails"
+        android:label="More Student Details" >
+
+</fragment>
 
 
 
@@ -68,9 +78,9 @@
             android:id="@+id/action_nav_report_to_result1"
             app:destination="@+id/result1"/>
 
-
-
     </fragment>
+
+
 
 
     <fragment
