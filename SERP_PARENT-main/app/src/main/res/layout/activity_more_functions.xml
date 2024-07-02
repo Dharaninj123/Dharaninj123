@@ -15,7 +15,9 @@
         android:drawablePadding="8dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textAlignment="viewStart" />
+        android:textAlignment="viewStart"
+        android:src="@drawable/baseline_arrow_forward_ios_24"/>
+
 
     <Button
         android:id="@+id/security_scope_button"

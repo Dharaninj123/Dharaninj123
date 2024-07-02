@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../../GANGADHARAIAH%20K/.android/icons/material/materialicons/drive_folder_upload/baseline_drive_folder_upload_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../../GANGADHARAIAH%20K/.android/icons/material/materialicons/settings/baseline_settings_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="009cfd" />
-                            <entry key="outputName" value="baseline_drive_folder_upload_24" />
+                            <entry key="color" value="111111" />
+                            <entry key="outputName" value="baseline_settings_24" />
                             <entry key="sourceFile" value="C:\Users\GANGADHARAIAH K\Desktop\sclerp\SERP_PARENT-main" />
                           </map>
                         </option>

@@ -37,6 +37,10 @@
             android:value="YOUR_API_KEY" />
 
         <activity
+            android:name=".StudentTracking"
+            android:exported="false"
+            android:label="@string/title_activity_student_tracking" />
+        <activity
             android:name=".StudentTrackingActivity"
             android:exported="false"
             android:label="@string/title_activity_student_tracking" /> <!-- Activities -->
