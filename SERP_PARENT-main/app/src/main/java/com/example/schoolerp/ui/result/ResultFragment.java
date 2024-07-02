@@ -31,7 +31,6 @@ public class ResultFragment extends Fragment {
         View root = binding.getRoot();
 
         // Initialize the ViewModel
-        ResultViewModel resultViewModel = new ViewModelProvider(this).get(ResultViewModel.class);
 
         // Prepare the list with a hint
         List<String> years = new ArrayList<>();

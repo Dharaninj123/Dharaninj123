@@ -29,7 +29,7 @@ public class AttendanceFragment extends Fragment {
         binding = FragmentAttendanceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        AttendanceViewModel attendanceViewModel = new ViewModelProvider(this).get(AttendanceViewModel.class);
+
 
         // Prepare the list with a hint
         List<String> months = new ArrayList<>();
