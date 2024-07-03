@@ -51,7 +51,7 @@
             android:name=".Settings"
             android:exported="false" />
         <activity
-            android:name=".MoreFunctions"
+            android:name=".MoreFunctionsFragment"
             android:exported="false" />
         <activity
             android:name=".Home_erp"

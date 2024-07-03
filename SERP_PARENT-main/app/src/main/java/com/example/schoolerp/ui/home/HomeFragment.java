@@ -18,6 +18,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
+import com.example.schoolerp.StudentTracking;
 
 import com.example.schoolerp.LoginActivity;
 import com.example.schoolerp.R;
@@ -58,13 +59,9 @@ public class HomeFragment extends Fragment {
 
         });
 
-        CardView ReportCardView = root.findViewById(R.id.report);
 
-        ReportCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { openReportFragment(v); }
 
-        });
+
 
         CardView SportsandCulturalCardView = root.findViewById(R.id.sportsandcultural);
 
@@ -74,6 +71,15 @@ public class HomeFragment extends Fragment {
 
         });
 
+        CardView studentTrackingCardView = root.findViewById(R.id.studentTracking);
+
+        studentTrackingCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), StudentTracking.class);
+                startActivity(intent);
+            }
+        });
 
         return root;
     }
@@ -121,6 +127,10 @@ public class HomeFragment extends Fragment {
 
     private void openAttendanceFragment(View view){
         Navigation.findNavController(view).navigate((R.id.action_nav_home_to_attendance));
+    }
+
+    private void openStudentTracking(View view){
+        Navigation.findNavController(view).navigate((R.id.action_nav_home_to_studenttracking));
     }
 
     private void openReportFragment(View view){

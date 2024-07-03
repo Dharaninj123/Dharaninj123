@@ -26,6 +26,10 @@
             app:destination="@+id/nav_attendance"/>
 
         <action
+            android:id="@+id/action_nav_home_to_studenttracking"
+            app:destination="@+id/nav_studenttracking"/>
+
+        <action
             android:id="@+id/action_nav_home_to_result"
             app:destination="@+id/nav_result"/>
 
