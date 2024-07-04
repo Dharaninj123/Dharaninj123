@@ -1,41 +1,28 @@
 package com.example.schoolerp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,12 +31,9 @@ import java.io.File;
  */
 public class AadhaarFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -57,15 +41,6 @@ public class AadhaarFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AadhaarFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static AadhaarFragment newInstance(String param1, String param2) {
         AadhaarFragment fragment = new AadhaarFragment();
         Bundle args = new Bundle();
@@ -92,19 +67,44 @@ public class AadhaarFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_aadhaar, container, false);
     }
 
+    public static void shareFile(Context context, File fileToShare) {
+        Uri contentUri = FileProvider.getUriForFile(
+                context,
+                context.getPackageName() + ".fileprovider",  // Replace with your FileProvider
+                fileToShare
+        );
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("*/*");   // Set the MIME type (adjust as needed)
+        shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+        context.startActivity(Intent.createChooser(shareIntent, "Share File"));
+    }
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.adharcard_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-
+    @SuppressLint("WrongThread")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.nav_share) {
-            shareDocument();
+            Bitmap bitmap = BitmapFactory.decodeResource(requireContext().getResources(), R.drawable.chirag);
+
+            File outputFile = new File(requireContext().getCacheDir(), "fileName.png");
+
+            try (FileOutputStream outputStream = new FileOutputStream(outputFile)) {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                outputFile.setReadable(true, false);
+                shareFile(requireContext(), outputFile);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             return true;
         } else if (id == R.id.nav_download) {
             NavHostFragment.findNavController(this).navigate(R.id.nav_aadhaar);
@@ -118,7 +118,6 @@ public class AadhaarFragment extends Fragment {
     }
 
     private void shareDocument() {
-        // Replace "your_document.pdf" with the actual file name
         File file = new File(requireContext().getFilesDir(), "Aadhaar.pdf");
         Uri uri = FileProvider.getUriForFile(requireContext(), "com.example.schoolerp.provider", file);
 

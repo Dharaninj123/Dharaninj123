@@ -144,7 +144,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/pickup_point"
+                    android:text="@string/pickup_date"
                     android:textSize="16sp"
                     android:textColor="@color/black"
                     android:paddingStart="20dp"/>
@@ -188,6 +188,39 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="@string/_7_30_am"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:paddingEnd="10dp"
+                    android:background="@null"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/greyView"  />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/dropTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Drop Time"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:paddingStart="20dp"/>
+
+                <EditText
+                    android:id="@+id/dropTimeinput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/_4_00_pm"
                     android:textSize="16sp"
                     android:textColor="@color/black"
                     android:paddingEnd="10dp"

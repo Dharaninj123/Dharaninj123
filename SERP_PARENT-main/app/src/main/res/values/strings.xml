@@ -249,6 +249,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="pickup_date">Pickup Date</string>
+    <string name="_4_00_pm">4:00 PM</string>
 
 
 </resources>

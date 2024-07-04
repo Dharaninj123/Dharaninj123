@@ -1,64 +1,111 @@
 package com.example.schoolerp;
 
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DocumentFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import static android.app.Activity.RESULT_OK;
+
 public class DocumentFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final int PICK_FILE_REQUEST_CODE = 1;
+    private ImageView imageFileIcon;
+    private TextInputEditText editTextFileName;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_document, container, false);
 
-    public DocumentFragment() {
-        // Required empty public constructor
+        imageFileIcon = view.findViewById(R.id.image_file_icon);
+        editTextFileName = view.findViewById(R.id.editTextFileName);
+
+        imageFileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFileChooser();
+            }
+        });
+
+        return view;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DocumentFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DocumentFragment newInstance(String param1, String param2) {
-        DocumentFragment fragment = new DocumentFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    private void openFileChooser() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("*/*");
+        startActivityForResult(Intent.createChooser(intent, "Select File"), PICK_FILE_REQUEST_CODE);
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_FILE_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            Uri fileUri = data.getData();
+            if (fileUri != null) {
+                String fileName = getFileName(fileUri);
+                editTextFileName.setText(fileName);
+                saveFileToInternalStorage(fileUri, fileName);
+                Toast.makeText(getContext(), "File Selected: " + fileName, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_document, container, false);
+    private String getFileName(Uri uri) {
+        String fileName = "";
+        ContentResolver contentResolver = requireContext().getContentResolver();
+        if (uri.getScheme().equals("content")) {
+            try (Cursor cursor = contentResolver.query(uri, null, null, null, null)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    int index = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                    if (index != -1) {
+                        fileName = cursor.getString(index);
+                    }
+                }
+            } catch (Exception e) {
+                Log.e("DocumentFragment", "Error retrieving file name", e);
+            }
+        } else {
+            fileName = new File(uri.getPath()).getName();
+        }
+        return fileName;
+    }
+
+    private void saveFileToInternalStorage(Uri fileUri, String fileName) {
+        File targetFile = new File(requireContext().getFilesDir(), fileName);
+        try (InputStream inputStream = requireContext().getContentResolver().openInputStream(fileUri);
+             OutputStream outputStream = new FileOutputStream(targetFile)) {
+
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+            outputStream.flush();
+            Toast.makeText(getContext(), "File saved to internal storage", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.e("DocumentFragment", "Error saving file", e);
+            Toast.makeText(getContext(), "Failed to save file", Toast.LENGTH_SHORT).show();
+        }
     }
 }

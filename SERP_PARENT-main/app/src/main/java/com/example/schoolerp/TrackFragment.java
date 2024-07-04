@@ -13,6 +13,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -43,9 +44,12 @@ public class TrackFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in JP Nagar, Bangalore, and move the camera
+        // Add a custom marker (bus icon) in JP Nagar, Bangalore, and move the camera
         LatLng jpNagar = new LatLng(12.9137, 77.6101);
-        mMap.addMarker(new MarkerOptions().position(jpNagar).title("Marker in JP Nagar, Bangalore"));
+        mMap.addMarker(new MarkerOptions()
+                .position(jpNagar)
+                .title("Marker in JP Nagar, Bangalore")
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.baseline_directions_bus_24))); // Use your bus icon drawable
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jpNagar, 15));  // Zoom level 15 for a closer view
     }
 }

@@ -113,7 +113,7 @@ public class dob extends Fragment {
 
         if (id == R.id.nav_share) {
 
-            Bitmap bitmap = BitmapFactory.decodeResource(requireContext().getResources(), R.drawable.attendance1);
+            Bitmap bitmap = BitmapFactory.decodeResource(requireContext().getResources(), R.drawable.chirag);
 
             //save bitmap to app cache folder
             File outputFile = new File(requireContext().getCacheDir(),"fileName"+".png");
