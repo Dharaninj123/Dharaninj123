@@ -11,7 +11,7 @@
     <string name="login">Login</string>
     <string name="don_t_have_an_account">Don\'t have an account\?</string>
     <string name="create">Create</string>
-    <string name="signup">SignUp</string>
+    <string name="signup"><u>SignUp</u></string>
     <string name="verify_otp">Verify OTP</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="name">Name</string>
@@ -251,6 +251,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="pickup_date">Pickup Date</string>
     <string name="_4_00_pm">4:00 PM</string>
+    <string name="signup1">SignUp</string>
+    <string name="login1"><u>Login</u></string>
 
 
 </resources>

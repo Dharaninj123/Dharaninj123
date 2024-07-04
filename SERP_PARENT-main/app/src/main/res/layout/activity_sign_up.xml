@@ -29,23 +29,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/signup"
+                android:text="@string/signup1"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="28sp"
-                android:textStyle="bold" />
+                android:textSize="30sp" />
 
             <EditText
                 android:id="@+id/signup_name"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:backgroundTint="@color/white"
                 android:background="@drawable/rounded_textview"
                 android:drawableStart="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/name"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:autofillHints="name"
                 android:inputType="text"
                 android:textColor="@color/black"
@@ -54,7 +53,7 @@
             <EditText
                 android:id="@+id/signup_mobile_number"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/rounded_textview"
                 android:backgroundTint="@color/white"
@@ -63,7 +62,7 @@
                 android:hint="@string/mobile_number"
                 android:autofillHints="Mobile number"
                 android:inputType="number"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey"
                 app:counterEnabled="true"
@@ -73,7 +72,7 @@
             <EditText
                 android:id="@+id/signup_dob"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:autofillHints="dob"
                 android:background="@drawable/rounded_textview"
@@ -83,21 +82,21 @@
                 android:hint="@string/dob"
                 android:inputType="number"
                 android:onClick="showDatePickerDialog"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/grey" />
 
             <EditText
                 android:id="@+id/signup_password"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/white"
                 android:background="@drawable/rounded_textview"
                 android:drawableStart="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/password"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:autofillHints="password"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
@@ -108,14 +107,14 @@
             <EditText
                 android:id="@+id/signup_confirm_password"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="@color/white"
                 android:background="@drawable/rounded_textview"
                 android:drawableStart="@drawable/baseline_lock_person_24"
                 android:drawablePadding="8dp"
                 android:hint="@string/confirm_password"
-                android:padding="8dp"
+                android:padding="12dp"
                 android:autofillHints="password"
                 android:inputType="textPassword"
                 android:textColor="@color/black"
@@ -128,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/signup"
+                android:text="@string/signup1"
                 android:textColor="@color/white"
                 android:background="@drawable/rounded_button"
                 android:backgroundTint="@color/black"
@@ -138,7 +137,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
                 android:layout_marginTop="10dp"
-                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
@@ -146,17 +144,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/already_have_an_account"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/login2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/transparent"
-                    android:text="@string/login"
+                    android:text="@string/login1"
                     android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
