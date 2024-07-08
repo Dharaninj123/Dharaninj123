@@ -99,7 +99,7 @@
         android:label="@string/logout"
         android:name="com.example.schoolerp.LogoutFragment"
         tools:layout="@layout/fragment_logout" />
-  >
+
     <fragment
         android:id="@+id/nav_notification"
         android:name="com.example.schoolerp.NotificationFragment"

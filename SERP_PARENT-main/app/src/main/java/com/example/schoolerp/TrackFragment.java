@@ -16,6 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class TrackFragment extends Fragment implements OnMapReadyCallback {
 
@@ -44,12 +45,35 @@ public class TrackFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a custom marker (bus icon) in JP Nagar, Bangalore, and move the camera
+        // Define the waypoints
         LatLng jpNagar = new LatLng(12.9137, 77.6101);
+        LatLng mangalore = new LatLng(12.9141, 74.8560);
+        LatLng coimbatore = new LatLng(11.0168, 76.9558);
+
+        // Add markers for each waypoint
         mMap.addMarker(new MarkerOptions()
                 .position(jpNagar)
                 .title("Marker in JP Nagar, Bangalore")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.baseline_directions_bus_24))); // Use your bus icon drawable
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jpNagar, 15));  // Zoom level 15 for a closer view
+
+        mMap.addMarker(new MarkerOptions()
+                .position(mangalore)
+                .title("Marker in Mangalore"));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(coimbatore)
+                .title("Marker in Coimbatore"));
+
+        // Add a polyline to connect the waypoints
+        PolylineOptions polylineOptions = new PolylineOptions()
+                .add(jpNagar)
+                .add(mangalore)
+                .add(coimbatore)
+                .clickable(true);
+
+        mMap.addPolyline(polylineOptions);
+
+        // Move the camera to the first waypoint
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(jpNagar, 7));  // Zoom level 7 for a broader view
     }
 }
