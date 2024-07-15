@@ -43,17 +43,10 @@
             android:exported="false"
             android:label="@string/title_activity_student_tracking" />
         <activity
-            android:name=".StudentTrackingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_student_tracking" /> <!-- Activities -->
-        <activity
             android:name=".EditStudentProfile"
             android:exported="false" />
         <activity
             android:name=".Settings"
-            android:exported="false" />
-        <activity
-            android:name=".MoreFunctionsFragment"
             android:exported="false" />
         <activity
             android:name=".Home_erp"

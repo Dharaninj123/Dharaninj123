@@ -196,13 +196,13 @@ public class SignupActivity extends AppCompatActivity {
                         Calendar selectedDate = Calendar.getInstance();
                         selectedDate.set(selectedYear, selectedMonth, selectedDay);
 
-                        // Format the date to YYYY-MM-DD
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+                        // Format the date to DD-MM-YYYY
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
                         String formattedDate = sdf.format(selectedDate.getTime());
 
                         // Set the formatted date to the EditText
                         signup_dob.setText(formattedDate);
-                    }, year, month, day);
+                    },day, month,year );
 
             // Show the date picker dialog
             datePickerDialog.show();
