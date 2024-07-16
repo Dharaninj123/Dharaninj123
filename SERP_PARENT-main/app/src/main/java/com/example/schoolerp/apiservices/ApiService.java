@@ -45,8 +45,7 @@ public interface ApiService {
     Call<SendOTPResponse> verifyOTP(@Field("otp") String otp,@Field("mobile_number") String mobile_number);
 
 
-
-    @GET("student-details")
+    @GET("student/")
     Call<StudentsDetailsResponse> getStudentDetails();
 
     @GET("student/")

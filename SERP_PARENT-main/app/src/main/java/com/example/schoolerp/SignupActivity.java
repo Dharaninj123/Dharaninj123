@@ -33,44 +33,12 @@ import java.util.Locale;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.schoolerp.apiservices.ApiService;
-import com.example.schoolerp.controller.Controller;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.messaging.FirebaseMessaging;
-
-import java.util.Calendar;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
 
 public class SignupActivity extends AppCompatActivity {
 
 
-        private EditText signup_name, signup_dob, signup_password, signup_confirm_password, signup_mobile_number;
+        private EditText signup_name,signup_mobile_number, signup_dob, signup_password, signup_confirm_password;
         private Button signup_button;
         private Calendar calendar;
         private ApiService apiService;
@@ -83,10 +51,10 @@ public class SignupActivity extends AppCompatActivity {
             setContentView(R.layout.activity_sign_up);
 
             signup_name = findViewById(R.id.signup_name);
+            signup_mobile_number=findViewById(R.id.signup_mobile_number);
             signup_dob = findViewById(R.id.signup_dob);
             signup_password = findViewById(R.id.signup_password);
             signup_confirm_password = findViewById(R.id.signup_confirm_password);
-            signup_mobile_number=findViewById(R.id.signup_mobile_number);
             signup_button = findViewById(R.id.signup_button);
             Button login_button = findViewById(R.id.login2);
 
@@ -94,12 +62,12 @@ public class SignupActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     String first_name = signup_name.getText().toString().trim();
+                    String mobile_number= signup_mobile_number.getText().toString().trim();
                     String date_of_birth = signup_dob.getText().toString().trim();
                     String password = signup_password.getText().toString().trim();
                     String password2 = signup_confirm_password.getText().toString().trim();
-                    String mobile_number= signup_mobile_number.getText().toString().trim();
 
-                    validateInfo(first_name, date_of_birth, password, password2, mobile_number);
+                    validateInfo(first_name, mobile_number, date_of_birth, password, password2);
                 }
             });
 
@@ -139,20 +107,20 @@ public class SignupActivity extends AppCompatActivity {
             signup_button.startAnimation(blinkAnimation);
         }
 
-        private void validateInfo(String first_name, String date_of_birth, String password, String password2, String mobile_number) {
-            if (TextUtils.isEmpty(first_name) || TextUtils.isEmpty(date_of_birth) || TextUtils.isEmpty(password) || TextUtils.isEmpty(password2)) {
+        private void validateInfo(String first_name,String mobile_number, String date_of_birth, String password, String password2) {
+            if (TextUtils.isEmpty(first_name) || TextUtils.isEmpty(mobile_number) || TextUtils.isEmpty(date_of_birth) || TextUtils.isEmpty(password) || TextUtils.isEmpty(password2)) {
                 showCustomToast("All fields are required", 0xFFFF0000); // Red color
             } else if (!password.equals(password2)) {
                 showCustomToast("Passwords do not match", 0xFFFF0000); // Red color
             } else {
                 // If all validations pass, perform signup
-                signup(first_name, date_of_birth, password, password2, mobile_number, user_type);
+                signup(first_name, mobile_number, date_of_birth, password, password2, user_type);
             }
         }
 
-        private void signup(String first_name, String date_of_birth, String password, String password2, String mobile_number, int user_type) {
+        private void signup(String first_name, String mobile_number, String date_of_birth, String password, String password2, int user_type) {
             // Call the signup API using Retrofit
-            Call<SignupResponse> signupResponseCall = apiService.signupUser(first_name, date_of_birth, password, password2, mobile_number,2);
+            Call<SignupResponse> signupResponseCall = apiService.signupUser(first_name, mobile_number, date_of_birth, password, password2, 2);
             signupResponseCall.enqueue(new Callback<SignupResponse>() {
                 @Override
                 public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
@@ -191,18 +159,18 @@ public class SignupActivity extends AppCompatActivity {
 
             // Create a date picker dialog
             DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                    (view, selectedYear, selectedMonth, selectedDay) -> {
+                    (view, selectedDay, selectedMonth,selectedYear ) -> {
                         // Create a Calendar object and set the selected date
                         Calendar selectedDate = Calendar.getInstance();
-                        selectedDate.set(selectedYear, selectedMonth, selectedDay);
+                        selectedDate.set(selectedDay, selectedMonth,selectedYear);
 
-                        // Format the date to DD-MM-YYYY
-                        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+                        // Format the date to YYYY-DD-MM
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
                         String formattedDate = sdf.format(selectedDate.getTime());
 
                         // Set the formatted date to the EditText
                         signup_dob.setText(formattedDate);
-                    },day, month,year );
+                    },year,month,day);
 
             // Show the date picker dialog
             datePickerDialog.show();
