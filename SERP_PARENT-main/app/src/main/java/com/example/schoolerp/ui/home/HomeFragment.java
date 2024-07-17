@@ -16,8 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.example.schoolerp.HomeErpViewModel;
 import com.example.schoolerp.StudentTracking;
 
 import com.example.schoolerp.LoginActivity;
@@ -25,9 +28,12 @@ import com.example.schoolerp.R;
 
 public class HomeFragment extends Fragment {
 
+    HomeErpViewModel homeErpViewModel;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+       // homeErpViewModel = new ViewModelProvider(getActivity()).get(HomeErpViewModel.class);
 
         // Find the CardView with ID "name"
         CardView nameCardView = root.findViewById(R.id.name);
@@ -83,6 +89,18 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+     /**   homeErpViewModel.profileResponseMutableLiveData.observe(getViewLifecycleOwner(),profileResponse -> {
+            if (profileResponse!=null){
+                openProfileFragment(view);
+            }
+        });**/
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

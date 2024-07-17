@@ -141,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
                                     editor.putString("AccessToken",loginResponse.getAccess());
                                     editor.putString("Refresh",loginResponse.getRefresh());
+                                    editor.putString("MobileNumber",mobile_number);
                                     editor.apply();
 
                                         new Handler().postDelayed(new Runnable() {

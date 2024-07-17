@@ -125,6 +125,12 @@ public class SignupActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<SignupResponse> call, Response<SignupResponse> response) {
                     if (response.isSuccessful()) {
+                        SharedPreferences.Editor editor = getSharedPreferences("MyPrefs", MODE_PRIVATE).edit();
+                        SignupResponse signupResponse = response.body();
+                        /**editor.putString("AccessToken",signupResponse.getAccess());
+                        editor.putString("Refresh",signupResponse.getRefresh());**/
+                        editor.putString("MobileNumber",mobile_number);
+                        editor.apply();
                         showCustomToast("Signup Successful", 0xFF00FF00); // Green color
                         // Navigate to Home_erp activity on successful signup
                         Intent intent = new Intent(com.example.schoolerp.SignupActivity.this, Home_erp.class);

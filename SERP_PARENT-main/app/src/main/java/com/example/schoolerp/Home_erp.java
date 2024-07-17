@@ -5,11 +5,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -28,6 +31,7 @@ public class Home_erp extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeErpBinding binding;
     private ApiService apiService;
+    HomeErpViewModel homeErpViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class Home_erp extends AppCompatActivity {
 
         binding = ActivityHomeErpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        homeErpViewModel=new ViewModelProvider(this).get(HomeErpViewModel.class);
         setSupportActionBar(binding.appBarHomeErp.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;
@@ -68,11 +73,27 @@ public class Home_erp extends AppCompatActivity {
                     if (response.body() == null) {
                         Toast.makeText(Home_erp.this, "Response is null", Toast.LENGTH_SHORT).show();
 
-                    } else if (response.body().getfName() == null) {
-                        Toast.makeText(Home_erp.this, "First name is null", Toast.LENGTH_SHORT).show();
 
                     }else{
-                        Toast.makeText(Home_erp.this, "Firstname: " + response.body().getfName(), Toast.LENGTH_SHORT).show();
+                        View view = binding.navView.getHeaderView(0);
+                        homeErpViewModel.profileResponseMutableLiveData.postValue(response.body());
+                        if (response.body().getFirstname()!=null){
+                          TextView textView=(TextView)view.findViewById(R.id.nameView);
+                          textView.setText(response.body().getFirstname());
+
+                        }
+
+                        // To retrieve the value from SharedPreferences
+                        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                        String mobileNumber = sharedPreferences.getString("MobileNumber", "");
+
+                        if (!mobileNumber.isEmpty()){
+                            TextView textView=(TextView)view.findViewById(R.id.numberView);
+                            textView.setText(mobileNumber);
+
+                        }
+
+                        Toast.makeText(Home_erp.this, "Firstname: " + response.body().getSection(), Toast.LENGTH_SHORT).show();
 
                     }
 

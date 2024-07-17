@@ -15,10 +15,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 
 public class Student_Profile extends Fragment {
+
+    HomeErpViewModel homeErpViewModel;
 
     public Student_Profile() {
         // Required empty public constructor
@@ -38,6 +42,12 @@ public class Student_Profile extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.menu_items, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void openProfileFragment(View view) {
+        // Replace the current fragment with FragmentProfile
+        Navigation.findNavController(view).navigate(R.id.action_nav_home_to_profileFragment);
+
     }
 
     @Override
@@ -65,6 +75,7 @@ public class Student_Profile extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.profile_student, container, false);
+        homeErpViewModel = new ViewModelProvider(getActivity()).get(HomeErpViewModel.class);
 
         // Find the TextView by its ID
         TextView viewMore = view.findViewById(R.id.viewMore);
@@ -74,5 +85,16 @@ public class Student_Profile extends Fragment {
                 .navigate(R.id.fragment_more_student_details));
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        homeErpViewModel.profileResponseMutableLiveData.observe(getViewLifecycleOwner(),profileResponse -> {
+            if (profileResponse!=null){
+                openProfileFragment(view);
+            }
+        });
     }
 }
