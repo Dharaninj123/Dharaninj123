@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,10 +18,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.schoolerp.databinding.ProfileStudentBinding;
 
 public class Student_Profile extends Fragment {
 
-    HomeErpViewModel homeErpViewModel;
+    private HomeErpViewModel homeErpViewModel;
+    private ProfileStudentBinding binding;
 
     public Student_Profile() {
         // Required empty public constructor
@@ -47,7 +48,6 @@ public class Student_Profile extends Fragment {
     private void openProfileFragment(View view) {
         // Replace the current fragment with FragmentProfile
         Navigation.findNavController(view).navigate(R.id.action_nav_home_to_profileFragment);
-
     }
 
     @Override
@@ -73,27 +73,51 @@ public class Student_Profile extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment using ViewBinding
+        binding = ProfileStudentBinding.inflate(inflater, container, false);
         View view = inflater.inflate(R.layout.profile_student, container, false);
-        homeErpViewModel = new ViewModelProvider(getActivity()).get(HomeErpViewModel.class);
-
-        // Find the TextView by its ID
-        TextView viewMore = view.findViewById(R.id.viewMore);
+        homeErpViewModel = new ViewModelProvider(requireActivity()).get(HomeErpViewModel.class);
 
         // Set an OnClickListener for the TextView
-        viewMore.setOnClickListener(v -> NavHostFragment.findNavController(Student_Profile.this)
+        binding.viewMore.setOnClickListener(v -> NavHostFragment.findNavController(Student_Profile.this)
                 .navigate(R.id.fragment_more_student_details));
 
-        return view;
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        homeErpViewModel.profileResponseMutableLiveData.observe(getViewLifecycleOwner(),profileResponse -> {
-            if (profileResponse!=null){
-                openProfileFragment(view);
+        homeErpViewModel.profileResponseMutableLiveData.observe(getViewLifecycleOwner(), profileResponse -> {
+            if (profileResponse != null) {
+                if(profileResponse.getFirstname()!=null){
+                    binding.nameinput.setText(profileResponse.getFirstname());
+                }
+                if(profileResponse.getAdmissionNumber()!=null){
+                    binding.admissionNoinput.setText(profileResponse.getAdmissionNumber());
+                }
+                if(profileResponse.getDateOfAdmission()!=null){
+                    binding.admissionDateinput.setText(profileResponse.getDateOfAdmission());
+                }
+                if(profileResponse.getRollNo()!=null){
+                    binding.rollNoinput.setText(profileResponse.getRollNo());
+                }
+                if(profileResponse.getSection()!=null){
+                    binding.sectioninput.setText(profileResponse.getSection());
+                }
+                if(profileResponse.getGender()!=null){
+                    binding.genderinput.setText(profileResponse.getGender());
+                }
+                if(profileResponse.getEducationMedium()!=null){
+                    binding.mediuminput.setText(profileResponse.getEducationMedium());
+                }
+                if(profileResponse.getStream()!=null){
+                    binding.boardinput.setText(profileResponse.getStream());
+                }
+                if(profileResponse.getAddress()!=null){
+                    binding.addressinput.setText(profileResponse.getAddress());
+                }
             }
         });
     }

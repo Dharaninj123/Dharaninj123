@@ -1,24 +1,21 @@
 package com.example.schoolerp.apiservices;
 
-import com.example.schoolerp.FCMTokenRequest;
-import com.example.schoolerp.LoginRequest;
 import com.example.schoolerp.LoginResponse;
 import com.example.schoolerp.ProfileResponse;
 import com.example.schoolerp.SendOTPResponse;
-import com.example.schoolerp.SignupRequest;
 import com.example.schoolerp.SignupResponse;
 import com.example.schoolerp.StudentsDetailsResponse;
+import com.example.schoolerp.apiservices.modelclass.AadhaarCardResponse;
 import com.example.schoolerp.apiservices.modelclass.Post;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.Query;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
+import retrofit2.http.Path;
+
 
 public interface ApiService {
 
@@ -53,6 +50,7 @@ public interface ApiService {
     @GET("student/")
     Call<ProfileResponse> getStudentDetails(@Header("Authorization") String authorizationHeader);
 
-
+    @GET("aadhar-card/")
+    Call<AadhaarCardResponse> getAadharCard(@Header("Authorization") String authorizationHeader);
 
 }

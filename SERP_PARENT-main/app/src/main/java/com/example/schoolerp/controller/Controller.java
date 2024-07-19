@@ -18,6 +18,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import com.example.schoolerp.apiservices.modelclass.Post;
+
 
 public class Controller {
 

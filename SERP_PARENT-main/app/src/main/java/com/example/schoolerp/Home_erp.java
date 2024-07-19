@@ -3,13 +3,10 @@ package com.example.schoolerp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.lifecycle.ViewModelProvider;
@@ -19,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.schoolerp.apiservices.ApiService;
+import com.example.schoolerp.apiservices.modelclass.AadhaarCardResponse;
 import com.example.schoolerp.controller.Controller;
 import com.example.schoolerp.databinding.ActivityHomeErpBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -31,8 +29,8 @@ public class Home_erp extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeErpBinding binding;
     private ApiService apiService;
-    HomeErpViewModel homeErpViewModel;
 
+    private HomeErpViewModel homeErpViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +112,32 @@ public class Home_erp extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         handleNotificationIntent(intent);
+    }
+
+    private void getAadharCardData(){
+        SharedPreferences spf = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String token = spf.getString("AccessToken","");
+        token = "Bearer" + token;
+        apiService.getAadharCard(token).enqueue(new Callback<AadhaarCardResponse>() {
+
+            @Override
+            public void onResponse(Call<AadhaarCardResponse> call, Response<AadhaarCardResponse> response) {
+                if (response.isSuccessful()){
+                    if(response.body() == null) {
+                        Toast.makeText(Home_erp.this,"Response of null", Toast.LENGTH_SHORT).show();
+                    }else{
+                        homeErpViewModel.aadharCardResponseMutableLiveData.postValue(response.body().getAadhar_document_url());
+                    }
+                }else{
+                    Toast.makeText(Home_erp.this,"response message:" + response.message()+"",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AadhaarCardResponse> call, Throwable t) {
+
+            }
+        });
     }
 
     private void handleNotificationIntent(Intent intent) {
