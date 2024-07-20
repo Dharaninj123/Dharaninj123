@@ -135,6 +135,7 @@ public class Home_erp extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<AadhaarCardResponse> call, Throwable t) {
+                Toast.makeText(Home_erp.this,"Failed to fetcth student details"+t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });
