@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,7 +24,6 @@ import com.example.schoolerp.HomeErpViewModel;
 import com.example.schoolerp.LoginActivity;
 import com.example.schoolerp.R;
 import com.example.schoolerp.StudentTracking;
-import com.example.schoolerp.ui.home.HomeFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -36,8 +34,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // Load the AadhaarFragment
-        loadFragment(new HomeFragment());
+
 
         // Find the CardView with ID "name"
         CardView nameCardView = root.findViewById(R.id.name);
@@ -77,6 +74,13 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 openSportCulturalFragment(v);
             }
+        });
+
+        CardView resultCardView = root.findViewById(R.id.resultCardView);
+
+        resultCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { openResultFragment(v); }
         });
 
         CardView studentTrackingCardView = root.findViewById(R.id.studentTracking);

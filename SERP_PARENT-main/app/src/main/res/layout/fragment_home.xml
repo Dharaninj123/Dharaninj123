@@ -183,7 +183,7 @@
 
             <!-- Report Card -->
             <androidx.cardview.widget.CardView
-                android:id="@+id/report"
+                android:id="@+id/resultCardView"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_margin="12dp"

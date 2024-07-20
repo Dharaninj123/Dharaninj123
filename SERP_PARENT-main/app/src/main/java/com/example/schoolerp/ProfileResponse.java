@@ -1,12 +1,10 @@
 package com.example.schoolerp;
 
 
-        import java.util.LinkedHashMap;
-        import java.util.Map;
 public class ProfileResponse {
 
-    private String registrationNumber;
-    private String admissionNumber;
+    private String registration_number;
+    private String admission_number;
     private String dateOfAdmission;
     private String rollNo;
     private Integer currentClass;
@@ -17,7 +15,7 @@ public class ProfileResponse {
     private String enrolledClass;
     private Integer enrolledYear;
     private String passport;
-    private String isRte;
+    private Object isRte;
     private String firstname;
     private String lastName;
     private String parentMobileNumber;
@@ -25,7 +23,7 @@ public class ProfileResponse {
     private String email;
     private String gender;
     private String dateOfBirth;
-    private String dobCertificate;
+    private Object dobCertificate;
     private String dobCertificateNumber;
     private String bloodGroup;
     private String height;
@@ -44,7 +42,7 @@ public class ProfileResponse {
     private String fQualifications;
     private String fResidentialAddress;
     private String fOccupation;
-    private String fAnnualIncome;
+    private Object fAnnualIncome;
     private String fEmailAddress;
     private String fMobileNo;
     private String alternateMobileNumber;
@@ -54,16 +52,16 @@ public class ProfileResponse {
     private String religion;
     private String category;
     private String caste;
-    private String categoryCertificate;
+    private Object categoryCertificate;
     private String aadharNumber;
     private String aadharDocument;
-    private String transferCertificateNumber;
-    private String dateOfIssue;
+    private Object transferCertificateNumber;
+    private Object dateOfIssue;
     private String nameAndAddressOfSchool;
-    private String attendedClass;
-    private String lastSchoolAffiliatedTo;
-    private String lastSession;
-    private String dropout;
+    private Object attendedClass;
+    private Object lastSchoolAffiliatedTo;
+    private Object lastSession;
+    private Object dropout;
     private String address;
     private String pincode;
     private String city;
@@ -71,21 +69,20 @@ public class ProfileResponse {
     private String country;
     private String studentAdmissionType;
 
-
     public String getRegistrationNumber() {
-        return registrationNumber;
+        return registration_number;
     }
 
     public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
+        this.registration_number = registrationNumber;
     }
 
-    public String getAdmissionNumber() {
-        return admissionNumber;
+    public String getAdmission_number() {
+        return admission_number;
     }
 
-    public void setAdmissionNumber(String admissionNumber) {
-        this.admissionNumber = admissionNumber;
+    public void setAdmission_number(String admissionNumber) {
+        this.admission_number = admissionNumber;
     }
 
     public String getDateOfAdmission() {
@@ -168,11 +165,11 @@ public class ProfileResponse {
         this.passport = passport;
     }
 
-    public String getIsRte() {
+    public Object getIsRte() {
         return isRte;
     }
 
-    public void setIsRte(String isRte) {
+    public void setIsRte(Object isRte) {
         this.isRte = isRte;
     }
 
@@ -232,11 +229,11 @@ public class ProfileResponse {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getDobCertificate() {
+    public Object getDobCertificate() {
         return dobCertificate;
     }
 
-    public void setDobCertificate(String dobCertificate) {
+    public void setDobCertificate(Object dobCertificate) {
         this.dobCertificate = dobCertificate;
     }
 
@@ -384,11 +381,11 @@ public class ProfileResponse {
         this.fOccupation = fOccupation;
     }
 
-    public String getfAnnualIncome() {
+    public Object getfAnnualIncome() {
         return fAnnualIncome;
     }
 
-    public void setfAnnualIncome(String fAnnualIncome) {
+    public void setfAnnualIncome(Object fAnnualIncome) {
         this.fAnnualIncome = fAnnualIncome;
     }
 
@@ -464,11 +461,11 @@ public class ProfileResponse {
         this.caste = caste;
     }
 
-    public String getCategoryCertificate() {
+    public Object getCategoryCertificate() {
         return categoryCertificate;
     }
 
-    public void setCategoryCertificate(String categoryCertificate) {
+    public void setCategoryCertificate(Object categoryCertificate) {
         this.categoryCertificate = categoryCertificate;
     }
 
@@ -488,19 +485,19 @@ public class ProfileResponse {
         this.aadharDocument = aadharDocument;
     }
 
-    public String getTransferCertificateNumber() {
+    public Object getTransferCertificateNumber() {
         return transferCertificateNumber;
     }
 
-    public void setTransferCertificateNumber(String transferCertificateNumber) {
+    public void setTransferCertificateNumber(Object transferCertificateNumber) {
         this.transferCertificateNumber = transferCertificateNumber;
     }
 
-    public String getDateOfIssue() {
+    public Object getDateOfIssue() {
         return dateOfIssue;
     }
 
-    public void setDateOfIssue(String dateOfIssue) {
+    public void setDateOfIssue(Object dateOfIssue) {
         this.dateOfIssue = dateOfIssue;
     }
 
@@ -512,35 +509,35 @@ public class ProfileResponse {
         this.nameAndAddressOfSchool = nameAndAddressOfSchool;
     }
 
-    public String getAttendedClass() {
+    public Object getAttendedClass() {
         return attendedClass;
     }
 
-    public void setAttendedClass(String attendedClass) {
+    public void setAttendedClass(Object attendedClass) {
         this.attendedClass = attendedClass;
     }
 
-    public String getLastSchoolAffiliatedTo() {
+    public Object getLastSchoolAffiliatedTo() {
         return lastSchoolAffiliatedTo;
     }
 
-    public void setLastSchoolAffiliatedTo(String lastSchoolAffiliatedTo) {
+    public void setLastSchoolAffiliatedTo(Object lastSchoolAffiliatedTo) {
         this.lastSchoolAffiliatedTo = lastSchoolAffiliatedTo;
     }
 
-    public String getLastSession() {
+    public Object getLastSession() {
         return lastSession;
     }
 
-    public void setLastSession(String lastSession) {
+    public void setLastSession(Object lastSession) {
         this.lastSession = lastSession;
     }
 
-    public String getDropout() {
+    public Object getDropout() {
         return dropout;
     }
 
-    public void setDropout(String dropout) {
+    public void setDropout(Object dropout) {
         this.dropout = dropout;
     }
 
@@ -592,6 +589,4 @@ public class ProfileResponse {
         this.studentAdmissionType = studentAdmissionType;
     }
 
-
-
-}
+    }

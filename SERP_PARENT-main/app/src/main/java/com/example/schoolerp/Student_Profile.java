@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -91,11 +92,12 @@ public class Student_Profile extends Fragment {
 
         homeErpViewModel.profileResponseMutableLiveData.observe(getViewLifecycleOwner(), profileResponse -> {
             if (profileResponse != null) {
+                Log.i("ProfileResponse",profileResponse.toString());
                 if(profileResponse.getFirstname()!=null){
                     binding.nameinput.setText(profileResponse.getFirstname());
                 }
-                if(profileResponse.getAdmissionNumber()!=null){
-                    binding.admissionNoinput.setText(profileResponse.getAdmissionNumber());
+                if(profileResponse.getAdmission_number()!=null){
+                    binding.admissionNoinput.setText(profileResponse.getAdmission_number());
                 }
                 if(profileResponse.getDateOfAdmission()!=null){
                     binding.admissionDateinput.setText(profileResponse.getDateOfAdmission());
